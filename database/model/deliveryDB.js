@@ -1,9 +1,6 @@
-const mongoos = require('mongoose');
+const mongoose = require('mongoose');
 
-var CustomerSchema = new mongoose.schema({
-    CustomerID: {
-        type: Number
-    },
+var DeliverySchema = new mongoose.Schema({
     Name: {
         type: String
     },
@@ -35,4 +32,4 @@ var CustomerSchema = new mongoose.schema({
     }
 });
 
-module.exports = mongoose.model('CustomerDB', CustomerSchema);
+module.exports = mongoose.model('DeliveryDB', DeliverySchema);
