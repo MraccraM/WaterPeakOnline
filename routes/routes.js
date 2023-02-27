@@ -9,4 +9,6 @@ app.get('/', controller.getIndex);
 
 app.get('/content', controller.getContent)
 
+app.post('/submit-post', controller.submitDB);
+
 module.exports = app;

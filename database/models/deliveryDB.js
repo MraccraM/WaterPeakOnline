@@ -8,7 +8,8 @@ var DeliverySchema = new mongoose.Schema({
         type: String
     },
     Date: {
-        type: Date
+        type: String
+        //type: Date
     },
     Type: {
         type: String,

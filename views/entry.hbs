@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Delivery DB</title>
+    </head>
+
+    <body>
+        {{#each contents}}
+            Name: {{this.Name}} <br>
+            Mobile Number: {{this.PhoneNumber}} <br>
+            Date: {{this.Date}} <br>
+            Type: {{this.Type}} <br>
+            Address: {{this.Address}} <br>
+            Gallons Ordered: {{this.GallonsOrdered}} <br>
+            Amount to be paid: {{this.AmountDue}} <br>
+            Status: {{this.Status}} <br>
+            Remarks: {{this.Remarks}} <br>
+        {{/each}}
+    </body>
+</html>
