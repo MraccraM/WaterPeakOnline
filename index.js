@@ -8,7 +8,7 @@ const routes = require("./routes/routes.js")
 const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 
-//app.set('views', './views');
+app.set('views', './views');
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 

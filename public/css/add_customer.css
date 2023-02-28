@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@font-face {
+  font-family: "Cooper Black";
+  src: url("/fonts/cooper-black.otf");
+}
+
+body {
+    background: #5683AB45;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: 'Open Sans', sans-serif;
+    margin: 2px;
+}
+
+.add-customer{
+  max-width: 450px;
+  background: #116D9B;
+  margin: 150px auto;
+  padding: 15px;
+  box-shadow: 5px 10px 18px #888888;
+  border-radius: 30px;
+  border: transparent;
+}
+
+.add-customer .title{
+  font-size: 20px;
+  font-weight: 50px;
+  margin-bottom: 25px;
+  color: #ffff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.add-customer .form{
+  width:100%;
+}
+
+.add-customer .form .input-field{
+  margin-bottom: 10px;
+  display:flex;
+  align-items: center;
+}
+
+.add-customer .form .input-field label{
+  width: 250px;
+  color: #d5dfe7;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.add-customer .form .input-field input{
+  width: 100%;
+  outline: none;
+  border: 1px solid #5e89cfff;
+  font-size: 14px;
+  padding: 5px 7px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.add-customer .form .input-field select{
+  width: 100%;
+  outline: none;
+  border: 1px solid #5e89cfff;
+  font-size: 15px;
+  padding: 5px 7px;
+  border-radius: 10px;
+}
+
+.add-customer .form .input-field input:invalid{
+  border: 1px solid red;
+}
+
+.add-customer .form .input-field input:valid{
+  border: 2px solid lightgreen;
+}
+
+.button{
+  outline: none;
+  border: none;
+  box-shadow: #888888;
+  font-size: 15px;
+  border-radius: 10px;
+  color:#ffffff;
+  line-height:25px;
+  margin-top: 10px;
+  text-align:center;
+  padding: 5px 7px;
+  margin-bottom: -5px;
+}
+
+.add{
+  background-color: #5e89cfff;
+}
+
+.add:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.delete{
+  background-color: red;
+}
+
+.delete:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.update{
+  background-color: #5e89cfff; 
+}
+
+.update:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+  
+.header-container {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    top: 0px;
+
+    background: #b2b4bbc3;
+    box-shadow: 5px 10px 18px #888888;
+
+}
+
+.header-title {
+    position: fixed;
+    font-family: "Cooper Black";
+    left: 40px;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 50px;
+    /* identical to box height */
+    margin-top:10px;
+    text-align: left;
+    
+    color: #273687;
+}
+
+.contacts {
+    position: fixed;
+    height: 50px;
+    width: 200px;
+    right: 40px;
+    border-radius: nullpx;
+
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: right;
+    letter-spacing: 0.02em;
+    
+    color: #273867;
+}
+
+.home-button{
+  position:absolute;
+  bottom:10%;
+  margin-left: 48.5%;
+}
+
+.home-button:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.footer-container {   
+    position: absolute;
+    width: 100%;
+    bottom:0%;
+    margin-left: 0;
+}
+
+.preFooter {
+    width: 100%;
+    height: 4px;
+    background: #38B6FF;
+}
+
+.footer {
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    background: #116D9B;
+}
+
+.footer-text {
+    width: 100%;
+    height: 22px;
+    padding-top: 10px;
+    
+    font-family: 'font-family: 'Open Sans', sans-serif;';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    
+    color: #FFFFFF;
+    
+}
+

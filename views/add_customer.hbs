@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="/css/add_customer.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="header-container">
+      <div class="header-title">Water Peak Online System</div>
+      <p class="contacts">Contacts: 0917-8002885 0977-4916202</p>
+  </div>
+
+  <div>
+    <a class="home-button" href="/main_menu"><img src = "/images/home.png"></a>
+  </div>
+
+  <div class="footer-container">
+      <div class="preFooter"></div>
+      <div class="footer">
+          <p class="footer-text">Copyright © 2023 | G2 Solutions</p>
+      </div>
+  </div>
+
+  <div class="add-customer">
+    <div class="title">
+      Add Customer
+    </div>
+
+    <form></form>
+      <div class="form">
+        <div class="input-field">
+          <label>Name/Company Name</label>
+          <input type="text" placeholder="Enter your name" required>
+        </div>
+        <div class="input-field">
+          <label>Mobile Number</label>
+          <input type="tel" placeholder="Enter your number"  pattern="[0-9]{11}" required>
+        </div>
+        <div class="input-field">
+          <label>Address</label>
+          <input type="text" placeholder="Enter address" required>
+        </div>
+        <div class="input-field">
+          <label>Customer Type</label>
+          <select>
+            <option value="Residential">Residential</option>
+            <option value="Office w/ Dispenser">Office w/ Dispenser</option>
+            <option value="Office w/o Dispenser">Office w/o Dispenser</option>
+          </select>
+        </div>
+        <p></p>
+        <div class="button">
+          <input type="submit" value="Submit" class="button add"></div>
+      </div>
+  </div>
+
+
+</body>
+
+</html>

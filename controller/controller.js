@@ -7,20 +7,41 @@ const controller = {
         res.status(204);
     },
 
+    //Page Navigation
     getIndex: function (req,res){
         res.render('index');
     },
 
-    getContent: async (req, res) => {
-        const contents = await Delivery.find({})
-        res.render('entry',{contents})
-        // db.findMany(Delivery, {}, {__id: 0, Name: 1, PhoneNumber: 1, Date: 1, Type: 1, Address: 1, GallonsOrdered: 1, AmountDue: 1, Status: 1, Remarks: 1}, (result) => {
-        //     console.log(result);
-        //     res.render('entry', {content: result});
-        // })
+    getMain: function (req,res) {
+        res.render('main_menu');
     },
 
-    submitDB: function (req,res) {
+    getAddOrder: function (req,res) {
+        res.render('add_order');
+    },
+
+    getAddCustomer: function (req,res) {
+        res.render('add_customer');
+    },
+
+    getDeliveryTable: function (req,res) {
+        res.render('delivery_table');
+    },
+
+    getCustomerTable: function (req,res) {
+        res.render('customer_table');
+    },
+
+    getUpdateOrder: function (req,res) {
+        res.render('update_delete_order');
+    },
+
+    getUpdateCustomer: function (req,res) {
+        res.render('update_delete_customer');
+    },
+
+    //DeliveryDB operations
+    submitDelivDB: function (req,res) {
         var delivery = {
             Name: req.body.name,
             PhoneNumber: req.body.phonenumber,
@@ -41,7 +62,7 @@ const controller = {
         });
     },
 
-    getDelete: function (req, res) {
+    getDelivDelete: function (req, res) {
         //fix with part that will get data
         
 
@@ -51,7 +72,7 @@ const controller = {
         })
     },
 
-    getEdit: function (req,res) {
+    getDelivEdit: function (req,res) {
         db.findOne(Delivery,{PhoneNumber: "09985861098"}, {}, function(result) {
             //console.log(result);
             if (result){
@@ -74,7 +95,81 @@ const controller = {
         })
     },
 
-    postEdit: function (req,res) {
+    postDelivEdit: function (req,res) {
+        var delivery = {
+            Name: req.body.name,
+            PhoneNumber: req.body.phonenumber,
+            Date: req.body.date,
+            Type: req.body.type,
+            Address: req.body.address,
+            GallonsOrdered: req.body.galordered,
+            AmountDue: req.body.amtdue,
+            Status: req.body.status,
+            Remarks: req.body.remarks
+        }
+
+        console.log(delivery);
+        db.updateOne(Delivery,{PhoneNumber: "09985861098"}, delivery, (result) =>{
+            res.render('index');
+        })
+    },
+
+    //CustomerDB operations
+    submitCustomDB: function (req,res) {
+        var delivery = {
+            Name: req.body.name,
+            PhoneNumber: req.body.phonenumber,
+            Date: req.body.date,
+            Type: req.body.type,
+            Address: req.body.address,
+            GallonsOrdered: req.body.galordered,
+            AmountDue: req.body.amtdue,
+            Status: req.body.status,
+            Remarks: req.body.remarks
+        }
+
+        console.log(delivery);
+
+        db.insertOne(Delivery, delivery, (result) => {
+            console.log("sent to db");
+            res.render('index');
+        });
+    },
+
+    getCustomDelete: function (req, res) {
+        //fix with part that will get data
+        
+
+        //change PhoneNumber to queried phone#
+        db.deleteOne(Delivery,{PhoneNumber: "09985861098"}, function(result) {
+            res.send();
+        })
+    },
+
+    getCustomEdit: function (req,res) {
+        db.findOne(Delivery,{PhoneNumber: "09985861098"}, {}, function(result) {
+            //console.log(result);
+            if (result){
+                var entry = {
+                    Name: result.Name,
+                    PhoneNumber: result.PhoneNumber,
+                    Date: result.Date,
+                    Type: result.Type,
+                    Address: result.Address,
+                    GallonsOrdered: result.GallonsOrdered,
+                    AmountDue: result.AmountDue,
+                    Status: result.Status,
+                    Remarks: result.Remarks
+                }
+                console.log(entry);
+                res.render('edit');
+            } else {
+                console.log("not there rip")
+            }
+        })
+    },
+
+    postCustomEdit: function (req,res) {
         var delivery = {
             Name: req.body.name,
             PhoneNumber: req.body.phonenumber,
