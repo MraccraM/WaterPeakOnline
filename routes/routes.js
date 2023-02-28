@@ -11,4 +11,9 @@ app.get('/content', controller.getContent)
 
 app.post('/submit-post', controller.submitDB);
 
+app.get('/delete', controller.getDelete);
+
+app.get('/edit', controller.getEdit);
+app.post('/edit', controller.postEdit);
+
 module.exports = app;

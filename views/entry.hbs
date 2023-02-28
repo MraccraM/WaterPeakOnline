@@ -4,16 +4,24 @@
     </head>
 
     <body>
-        {{#each contents}}
-            Name: {{this.Name}} <br>
-            Mobile Number: {{this.PhoneNumber}} <br>
-            Date: {{this.Date}} <br>
-            Type: {{this.Type}} <br>
-            Address: {{this.Address}} <br>
-            Gallons Ordered: {{this.GallonsOrdered}} <br>
-            Amount to be paid: {{this.AmountDue}} <br>
-            Status: {{this.Status}} <br>
-            Remarks: {{this.Remarks}} <br>
-        {{/each}}
+        <div id="contents">
+            {{#each contents}}
+                <p id = "name"> Name: {{this.Name}} </p> 
+                <p id = "phonenumber"> Mobile Number: {{this.PhoneNumber}} </p> 
+                <p id = "date"> Date: {{this.Date}} </p> 
+                <p id = "type"> Type: {{this.Type}} </p> 
+                <p id = "address"> Address: {{this.Address}} </p> 
+                <p id = "galordered"> Gallons Ordered: {{this.GallonsOrdered}} </p> 
+                <p id = "amtdue"> Amount to be paid: {{this.AmountDue}} </p> 
+                <p id = "status"> Status: {{this.Status}} </p> 
+                <p id = "remarks"> Remarks: {{this.Remarks}} </p> 
+                <br>
+                <a href="/edit"> Edit </a>
+                <br>
+                <a href="/delete"> Delete </a>
+                <hr>
+            {{/each}}
+            <a href="/"> Home </a>
+        </div>
     </body>
 </html>
