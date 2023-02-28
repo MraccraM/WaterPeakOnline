@@ -6,4 +6,4 @@
 2. On the command prompt, enter the following commands in the command prompt
 > npm i
 >
-> node server.js
+> node index.js
