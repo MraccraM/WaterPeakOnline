@@ -52,149 +52,21 @@
     <th class="c-status-bar" id="remarks">REMARKS</th>
     <th class="c-status-bar" id="update">UPDATE</th>
 
-      {{!-- Tried to do it with hbs partials, didnt work --}}
-      {{!-- {{#each entry}}
-        {{> customer_entry}}
-      {{/each}}  --}}
-
-      <!-- 
-          {{#each elem}}
-            <tr>
-              <td>{{this.Name}}</td>
-              <td>{{this.PhoneNumber}}</td>
-              <td>{{this.Type}}</td>
-              <td>{{this.Address}}</td>
-              <td>{{this.Remarks}}</td>
-              <td>
-                <span class = "update-button">
-                  <a href="/update_order_page">Edit</a>
-                </span>
-              </td>
-            </tr>
-          {{/each}} 
-        -->
+    {{#each people}}
+      <tr>
+        <td class="font">{{Name}}</td>
+        <td class="font">{{PhoneNumber}}</td>
+        <td class="font">{{Address}}</td>
+        <td class="font">{{Type}}</td>
+        <td class="font">{{Remarks}}</td>
+        <td>
+          <span class = "update-button">
+            <a href="/update_customer_page">Edit</a>
+          </span>
+        </td>
+      </tr>
+    {{/each}} 
     
-    <tr>
-      <td>Strawberry Jam Factory</td>
-      <td>+01244667889</td>
-      <td>2029 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-      <td>OFFICE w/Dispenser</td>
-      <td>Stuff</td>
-      <td>
-        <span class = "update-button">
-          <a href="/update_customer_page">Edit</a>
-        </span></td>
-    </tr>
-    <tr>
-      <td>Invisible Salmon Salon</td>
-      <td>+01234567890</td>
-      <td>2023 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-      <td>OFFICE w/o Dispenser</td>
-      <td>Stuff</td>
-      <td>
-        <span class = "update-button">
-          <a href="/update_customer_page">Edit</a>
-        </span></td>
-    </tr>
-    <tr>
-      <td>Tom's House</td>
-      <td>+01234567886</td>
-      <td>2024 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-      <td>RESIDENTIAL</td>
-      <td>Stuff</td>
-      <td>
-        <span class = "update-button">
-          <a href="/update_customer_page">Edit</a>
-        </span></td>
-    </tr>
-    <tr>
-      <td>Awning Resort</td>
-      <td>+01234367871</td>
-      <td>2025 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-      <td>OFFICE w/Dispenser</td>
-      <td>Stuff</td>
-      <td>
-        <span class = "update-button">
-          <a href="/update_customer_page">Edit</a>
-        </span></td>
-    </tr>
-    <tr>
-      <td>Bob's House</td>
-      <td>+01234657896</td>
-      <td>2027 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-      <td>RESIDENTIAL</td>
-      <td>Stuff</td>
-      <td>
-        <span class = "update-button">
-          <a href="/update_customer_page">Edit</a>
-        </span></td>
-    </tr>
-    <tr>
-      <td>Matt's House</td>
-      <td>+01234267892</td>
-      <td>2028 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-      <td>RESIDENTIAL</td>
-      <td>Stuff</td>
-      <td>
-        <span class = "update-button">
-          <a href="/update_customer_page">Edit</a>
-        </span></td>
-    </tr>
-    <tr>
-      <td>Bread Bakery</td>
-      <td>+01224667889</td>
-      <td>2030 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-      <td>OFFICE w/Dispenser</td>
-      <td>Stuff</td>
-      <td>
-        <span class = "update-button">
-          <a href="/update_customer_page">Edit</a>
-        </span></td>
-    </tr>
-    <tr>
-      <td>Taylor BBQ</td>
-      <td>+01244667855</td>
-      <td>2031 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-      <td>OFFICE w/o Dispenser</td>
-      <td>Stuff</td>
-      <td>
-        <span class = "update-button">
-          <a href="/update_customer_page">Edit</a>
-        </span></td>
-    </tr>
-    <tr>
-      <td>Mayflower Tailor Shop</td>
-      <td>+01244667869</td>
-      <td>2032 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-      <td>OFFICE w/Dispenser</td>
-      <td>Stuff</td>
-      <td>
-        <span class = "update-button">
-          <a href="/update_customer_page">Edit</a>
-        </span></td>
-    </tr>
-    <tr>
-      <td>Random House</td>
-      <td>+01244667877</td>
-      <td>2033 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-      <td>RESIDENTIAL</td>
-      <td>Stuff</td>
-      <td>
-        <span class = "update-button">
-          <a href="/update_customer_page">Edit</a>
-        </span></td>
-    </tr>
-    <tr>
-      <td>Not So Random House</td>
-      <td>+01244677889</td>
-      <td>2034 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-      <td>RESIDENTIAL</td>
-      <td>Stuff</td>
-      <td>
-        <span class = "update-button">
-          <a href="/update_customer_page">Edit</a>
-        </span></td>
-    </tr>
   </table>
 </div>
   <br><br><br>

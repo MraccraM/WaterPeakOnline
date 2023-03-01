@@ -38,7 +38,7 @@
             <label>DATE</label>
           <input type="date" id="date" onchange="formatDate()">
           </form>
-      </th>
+        </th>
 
         <th class="status-bar">
           <div class="filter-box" id="type">
@@ -61,222 +61,25 @@
 
         <th class="status-bar">Remarks</th>
         <th class="status-bar" id="update">UPDATE</th>
-
-        <!-- 
-          {{#each elem}}
-            <tr>
-              <td>{{this.Name}}</td>
-              <td>{{this.PhoneNumber}}</td>
-              <td>{{this.Date}}</td>
-              <td>{{this.Type}}</td>
-              <td>{{this.Address}}</td>
-              <td>{{this.GallonsOrdered}}</td>
-              <td>{{this.Status}}</td>
-              <td>{{this.Remarks}}</td>
-              <td>
-                <span class = "update-button">
-                  <a href="/update_order_page">Edit</a>
-                </span>
-              </td>
-            </tr>
-          {{/each}} 
-        -->
-
-        <tr>
-          <td>Invisible Salmon Salon1</td>
-          <td>+01244667889</td>
-          <td>11/23/2023</td>
-          <td>OFFICE w/o Dispenser </td>
-          <td>2023 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>10</td>
-          <td>P350.00</td>
-          <td>PENDING</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
-        <tr>
-          <td>Strawberry Jam Factory</td>
-          <td>+01234567890</td>
-          <td>01/02/2023</td>
-          <td> RESIDENTIAL</td>
-          <td>2029 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>10</td>
-          <td>P300.00</td>
-          <td>DELIVERED</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
-        <tr>
-          <td>Awning Resort</td>
-          <td>+01234367871</td>
-          <td>01/12/2022</td>
-          <td>OFFICE w/Dispenser</td>
-          <td>2025 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>100</td>
-          <td>P3000.00</td>
-          <td>DELIVERED</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
-        <tr>
-          <td>Random House</td>
-          <td>+01244667877</td>
-          <td>11/07/2023</td>
-          <td> RESIDENTIAL </td>
-          <td>2033 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>1</td>
-          <td>P30.00</td>
-          <td>CANCELLED</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
-        <tr>
-          <td>Not So Random House</td>
-          <td>+01244677889</td>
-          <td>08/20/2023</td>
-          <td> OFFICE w/o Dispenser </td>
-          <td>2034 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>2</td>
-          <td>P70.00</td>
-          <td>PENDING</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
-        <tr>
-          <td>Bread Bakery</td>
-          <td>+01224667889</td>
-          <td>06/02/2021</td>
-          <td>OFFICE w/Dispenser </td>
-          <td>2030 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>3</td>
-          <td>P90.00</td>
-          <td>DELIVERED</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
-        <tr>
-          <td>Mayflower Tailor Shop</td>
-          <td>+01244667855</td>
-          <td>12/12/2021</td>
-          <td>OFFICE w/o Dispenser</td>
-          <td>2032 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>1</td>
-          <td>P35.00</td>
-          <td>CANCELLED</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
-        <tr>
-          <td>Invisible Salmon Salon</td>
-          <td>+01244667889</td>
-          <td>02/26/2023</td>
-          <td>OFFICE w/o Dispenser </td>
-          <td>2023 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>10</td>
-          <td>P350.00</td>
-          <td>PENDING</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
-        <tr>
-          <td>Invisible Salmon Salon</td>
-          <td>+01244667889</td>
-          <td>09/23/2023</td>
-          <td>OFFICE w/o Dispenser </td>
-          <td>2023 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>10</td>
-          <td>P350.00</td>
-          <td>PENDING</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
-        <tr>
-          <td>Invisible Salmon Salon</td>
-          <td>+01244667889</td>
-          <td>11/23/2023</td>
-          <td>OFFICE w/o Dispenser </td>
-          <td>2023 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>10</td>
-          <td>P350.00</td>
-          <td>PENDING</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
-        <tr>
-          <td>Invisible Salmon Salon</td>
-          <td>+01244667889</td>
-          <td>02/23/2023</td>
-          <td>OFFICE w/o Dispenser </td>
-          <td>2023 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>10</td>
-          <td>P350.00</td>
-          <td>PENDING</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
-        <tr>
-          <td>Invisible Salmon Salon</td>
-          <td>+01244667889</td>
-          <td>01/23/2023</td>
-          <td>OFFICE w/o Dispenser </td>
-          <td>2023 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>10</td>
-          <td>P350.00</td>
-          <td>PENDING</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
-        <tr>
-          <td>Invisible Salmon Salon</td>
-          <td>+01244667889</td>
-          <td>02/27/2023</td>
-          <td>OFFICE w/o Dispenser </td>
-          <td>2023 Someplace Ave. Somewhere St. , Some City, Some Country</td>
-          <td>10</td>
-          <td>P350.00</td>
-          <td>PENDING</td>
-          <td>Stuff</td>
-          <td>
-            <span class = "update-button">
-              <a href="/update_order_page">Edit</a>
-            </span></td>
-        </tr>
+        
+        {{#each order}}
+          <tr>
+            <td class="font">{{Name}}</td>
+            <td class="font">{{PhoneNumber}}</td>
+            <td class="font">{{Date}}</td>
+            <td class="font">{{Type}}</td>
+            <td class="font">{{Address}}</td>
+            <td class="font">{{GallonsOrdered}}</td>
+            <td class="font">{{AmountDue}}</td>
+            <td class="font">{{Status}}</td>
+            <td class="font">{{Remarks}}</td>
+            <td>
+              <span class = "update-button">
+                <a href="/update_order_page">Edit</a>
+              </span>
+            </td>
+          </tr>
+        {{/each}} 
 
       </table>
     </div>

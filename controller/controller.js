@@ -25,11 +25,47 @@ const controller = {
     },
 
     getDeliveryTable: function (req,res) {
-        res.render('delivery_table');
+        Delivery.find().lean().exec((err, docs2) => {
+            if( docs2 ){
+
+                var order = []
+                for(var x in docs2){
+                    order.push({
+                        Name: docs2[x].Name,
+                        PhoneNumber: docs2[x].PhoneNumber,
+                        Date: docs2[x].Date,
+                        Type: docs2[x].Type,
+                        Address: docs2[x].Address,
+                        GallonsOrdered: docs2[x].GallonsOrdered,
+                        AmountDue: docs2[x].AmountDue,
+                        Status: docs2[x].Status,
+                        Remarks: docs2[x].Remarks,
+                    });
+                }
+            }
+            res.render('delivery_table', {
+                order});
+         })
     },
 
-    getCustomerTable: function (req,res) {
-        res.render('customer_table');
+    getCustomerTable: (req,res,next) => {
+        Customer.find().lean().exec((err, docs2) => {
+            if( docs2 ){
+
+                var people = []
+                for(var x in docs2){
+                    people.push({
+                        Name: docs2[x].Name,
+                        PhoneNumber: docs2[x].PhoneNumber,
+                        Address: docs2[x].Address,
+                        Type: docs2[x].Type,
+                        Remarks: docs2[x].Remarks,
+                    });
+                }
+            }
+            res.render('customer_table', {
+                people});
+         })
     },
 
     getUpdateOrder: function (req,res) {
@@ -64,7 +100,27 @@ const controller = {
         
                 db.insertOne(Delivery, delivery, (result) => {
                     console.log("sent to db");
-                    res.render('delivery_table');
+                    Delivery.find().lean().exec((err, docs2) => {
+                        if( docs2 ){
+            
+                            var order = []
+                            for(var x in docs2){
+                                order.push({
+                                    Name: docs2[x].Name,
+                                    PhoneNumber: docs2[x].PhoneNumber,
+                                    Date: docs2[x].Date,
+                                    Type: docs2[x].Type,
+                                    Address: docs2[x].Address,
+                                    GallonsOrdered: docs2[x].GallonsOrdered,
+                                    AmountDue: docs2[x].AmountDue,
+                                    Status: docs2[x].Status,
+                                    Remarks: docs2[x].Remarks,
+                                });
+                            }
+                        }
+                        res.render('delivery_table', {
+                            order});
+                     });
                 });
             } else {
                 console.log("User not in customerDB");
@@ -79,32 +135,80 @@ const controller = {
     },
 
     postDelivEdit: function (req,res) {
-        var todo = req.body.todo;
-        
-        var delivery = {
-            Name: req.body.name,
-            PhoneNumber: req.body.phonenumber,
-            Date: req.body.date,
-            Type: req.body.type,
-            Address: req.body.address,
-            GallonsOrdered: req.body.galordered,
-            AmountDue: req.body.amtdue,
-            Status: req.body.status,
-            Remarks: req.body.remarks
-        }
+        db.findOne(Customer,{PhoneNumber: req.body.phoneNum}, {}, function (result){
+            console.log(req.body.phoneNum);
+            if(result){
+                var customer = result;
+                var todo = req.body.todo;
+            
+                var delivery = {
+                    Name: req.body.name,
+                    PhoneNumber: req.body.phoneNum,
+                    Date: req.body.date,
+                    Type: customer.Type,
+                    Address: req.body.address,
+                    GallonsOrdered: req.body.galordered,
+                    AmountDue: req.body.amtdue,
+                    Status: req.body.status,
+                    Remarks: req.body.remarks
+                }
 
-        console.log(todo);
-        console.log(delivery);
+                console.log(todo);
+                console.log(delivery);
 
-        if (todo == "Update"){
-            db.updateOne(Delivery,{PhoneNumber: delivery.PhoneNumber}, delivery, (result) =>{
-                res.render('delivery_table');
-            });
-        }else if(todo == "Delete"){
-            db.deleteOne(Delivery, delivery, (result) => {
-                res.render('delivery_table');
-            });
-        }
+                if (todo == "Update"){
+                    db.updateOne(Delivery,{PhoneNumber: delivery.PhoneNumber}, delivery, (result) =>{
+                        Delivery.find().lean().exec((err, docs2) => {
+                            if( docs2 ){
+                
+                                var order = []
+                                for(var x in docs2){
+                                    order.push({
+                                        Name: docs2[x].Name,
+                                        PhoneNumber: docs2[x].PhoneNumber,
+                                        Date: docs2[x].Date,
+                                        Type: docs2[x].Type,
+                                        Address: docs2[x].Address,
+                                        GallonsOrdered: docs2[x].GallonsOrdered,
+                                        AmountDue: docs2[x].AmountDue,
+                                        Status: docs2[x].Status,
+                                        Remarks: docs2[x].Remarks,
+                                    });
+                                }
+                            }
+                            res.render('delivery_table', {
+                                order});
+                        });
+                    });
+                }else if(todo == "Delete"){
+                    db.deleteOne(Delivery, delivery, (result) => {
+                        Delivery.find().lean().exec((err, docs2) => {
+                            if( docs2 ){
+                
+                                var order = []
+                                for(var x in docs2){
+                                    order.push({
+                                        Name: docs2[x].Name,
+                                        PhoneNumber: docs2[x].PhoneNumber,
+                                        Date: docs2[x].Date,
+                                        Type: docs2[x].Type,
+                                        Address: docs2[x].Address,
+                                        GallonsOrdered: docs2[x].GallonsOrdered,
+                                        AmountDue: docs2[x].AmountDue,
+                                        Status: docs2[x].Status,
+                                        Remarks: docs2[x].Remarks,
+                                    });
+                                }
+                            }
+                            res.render('delivery_table', {
+                                order});
+                        });
+                    });
+                }
+            } else {
+                console.log("User not in customerDB");
+            }
+        });
     },
 
     //CustomerDB operations
@@ -121,7 +225,23 @@ const controller = {
 
         db.insertOne(Customer, customer, (result) => {
             console.log("sent to db");
-            res.render('customer_table');
+            Customer.find().lean().exec((err, docs2) => {
+                if( docs2 ){
+    
+                    var people = []
+                    for(var x in docs2){
+                        people.push({
+                            Name: docs2[x].Name,
+                            PhoneNumber: docs2[x].PhoneNumber,
+                            Address: docs2[x].Address,
+                            Type: docs2[x].Type,
+                            Remarks: docs2[x].Remarks,
+                        });
+                    }
+                }
+                res.render('customer_table', {
+                    people});
+             });
         });
     },
 
@@ -145,11 +265,42 @@ const controller = {
 
         if (todo == "Update"){
             db.updateOne(Customer,{PhoneNumber: customer.PhoneNumber}, customer, (result) =>{
-                res.render('customer_table');
+                Customer.find().lean().exec((err, docs2) => {
+                    if( docs2 ){
+        
+                        var people = []
+                        for(var x in docs2){
+                            people.push({
+                                Name: docs2[x].Name,
+                                PhoneNumber: docs2[x].PhoneNumber,
+                                Address: docs2[x].Address,
+                                Type: docs2[x].Type,
+                                Remarks: docs2[x].Remarks,
+                            });
+                        }
+                    }
+                    res.render('customer_table', {
+                        people});
+                 });
             });
         }else if(todo == "Delete"){
             db.deleteOne(Customer, customer, (result) => {
-                res.render('customer_table');
+                Customer.find().lean().exec((err, docs2) => {
+                    if( docs2 ){
+                        var people = []
+                        for(var x in docs2){
+                            people.push({
+                                Name: docs2[x].Name,
+                                PhoneNumber: docs2[x].PhoneNumber,
+                                Address: docs2[x].Address,
+                                Type: docs2[x].Type,
+                                Remarks: docs2[x].Remarks,
+                            });
+                        }
+                    }
+                    res.render('customer_table', {
+                        people});
+                 });
             });
         }
         

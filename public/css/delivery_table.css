@@ -262,3 +262,7 @@ a:link, a:visited, a:hover, a:active {
   border:0;
   margin-left: 30px;
 }
+
+.font{
+  font-size: 15px;
+}
