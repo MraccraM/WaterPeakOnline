@@ -1,7 +1,8 @@
 
 const mongoose = require('mongoose');
 
-const url = process.env.MONGODB_URI ||'mongodb://127.0.0.1:27017/SWENG-Project';
+//const url = process.env.MONGODB_URI ||'mongodb://127.0.0.1:27017/SWENG-Project';
+const url = "mongodb+srv://marcezekielsibal:SWENG@waterpeakonline.kfhvycg.mongodb.net/?retryWrites=true&w=majority";
 
 const options = {
     useUnifiedTopology: true,

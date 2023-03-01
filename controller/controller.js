@@ -1,6 +1,6 @@
 const db = require("../database/db.js");
 const Delivery = require('../database/models/deliveryDB');
-const customer = require('../database/models/customerDB');
+const Customer = require('../database/models/customerDB');
 
 const controller = {
     getFavicon: function (req, res) {
@@ -58,7 +58,7 @@ const controller = {
 
         db.insertOne(Delivery, delivery, (result) => {
             console.log("sent to db");
-            res.render('index');
+            res.render('delivery_table');
         });
     },
 
@@ -75,6 +75,7 @@ const controller = {
     getDelivEdit: function (req,res) {
         db.findOne(Delivery,{PhoneNumber: "09985861098"}, {}, function(result) {
             //console.log(result);
+            //find way to fill up the form already
             if (result){
                 var entry = {
                     Name: result.Name,
@@ -110,29 +111,25 @@ const controller = {
 
         console.log(delivery);
         db.updateOne(Delivery,{PhoneNumber: "09985861098"}, delivery, (result) =>{
-            res.render('index');
+            res.render('delivery_table');
         })
     },
 
     //CustomerDB operations
     submitCustomDB: function (req,res) {
-        var delivery = {
+        var customer = {
             Name: req.body.name,
             PhoneNumber: req.body.phonenumber,
-            Date: req.body.date,
             Type: req.body.type,
             Address: req.body.address,
-            GallonsOrdered: req.body.galordered,
-            AmountDue: req.body.amtdue,
-            Status: req.body.status,
             Remarks: req.body.remarks
         }
 
-        console.log(delivery);
+        console.log(customer);
 
-        db.insertOne(Delivery, delivery, (result) => {
+        db.insertOne(Customer, customer, (result) => {
             console.log("sent to db");
-            res.render('index');
+            res.render('customer_table');
         });
     },
 
@@ -153,12 +150,8 @@ const controller = {
                 var entry = {
                     Name: result.Name,
                     PhoneNumber: result.PhoneNumber,
-                    Date: result.Date,
                     Type: result.Type,
                     Address: result.Address,
-                    GallonsOrdered: result.GallonsOrdered,
-                    AmountDue: result.AmountDue,
-                    Status: result.Status,
                     Remarks: result.Remarks
                 }
                 console.log(entry);
@@ -170,21 +163,17 @@ const controller = {
     },
 
     postCustomEdit: function (req,res) {
-        var delivery = {
+        var customer = {
             Name: req.body.name,
             PhoneNumber: req.body.phonenumber,
-            Date: req.body.date,
             Type: req.body.type,
             Address: req.body.address,
-            GallonsOrdered: req.body.galordered,
-            AmountDue: req.body.amtdue,
-            Status: req.body.status,
             Remarks: req.body.remarks
         }
 
         console.log(delivery);
         db.updateOne(Delivery,{PhoneNumber: "09985861098"}, delivery, (result) =>{
-            res.render('index');
+            res.render('customer_table');
         })
     }
 }

@@ -12,7 +12,7 @@ var CustomerSchema = new mongoose.Schema({
     },
     Type: {
         type: String,
-        enum: ['Residential', 'Office A', 'Office B']
+        enum: ['Residential', 'Office w/ Dispenser', 'Office w/o Dispenser']
     },
     Remarks: {
         type: String
