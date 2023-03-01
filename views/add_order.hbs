@@ -31,35 +31,48 @@
       Add Order
     </div>
 
-    <form>
+    <form action="/add_order" method="post">
       <div class="form">
         <div class="input-field">
-          <label for="name">Name/Company Name</label>
+          <label>Name/Company Name</label>
           <input name="name" type="text" placeholder="Enter your name" required>
         </div>
         <div class="input-field">
-          <label for="phoneNum">Mobile Number</label>
+          <label>Mobile Number</label>
           <input name="phoneNum" type="tel" placeholder="Enter your number"  pattern="[0-9]{11}" required>
         </div>
         <div class="input-field">
-          <label for="address">Address</label>
+          <label>Date</label>
+          <input name="date" type="date" required>
+        </div>
+        <div class="input-field">
+          <label>Address</label>
           <input name="address" type="text" placeholder="Enter address" required>
         </div>
         <div class="input-field">
-          <label for="type">Customer Type</label>
-          <select name="type">
-            <option value="Residential">Residential</option>
-            <option value="Office w/ Dispenser">Office w/ Dispenser</option>
-            <option value="Office w/o Dispenser">Office w/o Dispenser</option>
+          <label>Gallons Ordered</label>
+          <input name="galordered" type="number" placeholder="Enter number of gallons" required>
+        </div>
+        <div class="input-field">
+          <label>Amount To be Paid</label>
+          <input name="amtdue" type="number" placeholder="Enter amount" required>
+        </div>
+        <div class="input-field">
+          <label>Status</label>
+          <select name="status">
+            <option value="Pending">Pending</option>
+            <option value="Delivered">Delivered</option>
+            <option value="Cancelled">Cancelled</option>
           </select>
         </div>
         <div class="input-field">
           <label>Remarks</label>
-          <input type="text" placeholder="Enter remarks">
+          <input name="remarks" type="text" placeholder="Enter remarks">
         </div>
         <p></p>
         <div class="button">
-          <input type="submit" value="Submit" class="button add"></div>
+          <input type="submit" value="Submit" class="button add">
+        </div>
       </div>
     </form>
   </div>

@@ -42,61 +42,45 @@ const controller = {
 
     //DeliveryDB operations
     submitDelivDB: function (req,res) {
-        var delivery = {
-            Name: req.body.name,
-            PhoneNumber: req.body.phonenumber,
-            Date: req.body.date,
-            Type: req.body.type,
-            Address: req.body.address,
-            GallonsOrdered: req.body.galordered,
-            AmountDue: req.body.amtdue,
-            Status: req.body.status,
-            Remarks: req.body.remarks
-        }
-
-        console.log(delivery);
-
-        db.insertOne(Delivery, delivery, (result) => {
-            console.log("sent to db");
-            res.render('delivery_table');
+        db.findOne(Customer,{PhoneNumber: req.body.phoneNum}, {}, function (result){
+            // var x = JSON.stringify(result);
+            // customer = JSON.parse(x);
+            if(result){
+                var customer = result;
+            
+                var delivery = {
+                    Name: req.body.name,
+                    PhoneNumber: req.body.phoneNum,
+                    Date: req.body.date,
+                    Type: customer.Type,
+                    Address: req.body.address,
+                    GallonsOrdered: req.body.galordered,
+                    AmountDue: req.body.amtdue,
+                    Status: req.body.status,
+                    Remarks: req.body.remarks
+                }
+        
+                console.log(delivery);
+        
+                db.insertOne(Delivery, delivery, (result) => {
+                    console.log("sent to db");
+                    res.render('delivery_table');
+                });
+            } else {
+                console.log("User not in customerDB");
+                //replace with a way to notify the user
+            }
+            
         });
     },
 
-    getDelivDelete: function (req, res) {
-        //fix with part that will get data
-        
-
-        //change PhoneNumber to queried phone#
-        db.deleteOne(Delivery,{PhoneNumber: "09985861098"}, function(result) {
-            res.send();
-        })
-    },
-
     getDelivEdit: function (req,res) {
-        db.findOne(Delivery,{PhoneNumber: "09985861098"}, {}, function(result) {
-            //console.log(result);
-            //find way to fill up the form already
-            if (result){
-                var entry = {
-                    Name: result.Name,
-                    PhoneNumber: result.PhoneNumber,
-                    Date: result.Date,
-                    Type: result.Type,
-                    Address: result.Address,
-                    GallonsOrdered: result.GallonsOrdered,
-                    AmountDue: result.AmountDue,
-                    Status: result.Status,
-                    Remarks: result.Remarks
-                }
-                console.log(entry);
-                res.render('edit');
-            } else {
-                console.log("not there rip")
-            }
-        })
+        res.render('update_delete_order');
     },
 
     postDelivEdit: function (req,res) {
+        var todo = req.body.todo;
+        
         var delivery = {
             Name: req.body.name,
             PhoneNumber: req.body.phonenumber,
@@ -109,17 +93,25 @@ const controller = {
             Remarks: req.body.remarks
         }
 
+        console.log(todo);
         console.log(delivery);
-        db.updateOne(Delivery,{PhoneNumber: "09985861098"}, delivery, (result) =>{
-            res.render('delivery_table');
-        })
+
+        if (todo == "Update"){
+            db.updateOne(Delivery,{PhoneNumber: delivery.PhoneNumber}, delivery, (result) =>{
+                res.render('delivery_table');
+            });
+        }else if(todo == "Delete"){
+            db.deleteOne(Delivery, delivery, (result) => {
+                res.render('delivery_table');
+            });
+        }
     },
 
     //CustomerDB operations
     submitCustomDB: function (req,res) {
         var customer = {
             Name: req.body.name,
-            PhoneNumber: req.body.phonenumber,
+            PhoneNumber: req.body.phoneNum,
             Type: req.body.type,
             Address: req.body.address,
             Remarks: req.body.remarks
@@ -133,48 +125,34 @@ const controller = {
         });
     },
 
-    getCustomDelete: function (req, res) {
-        //fix with part that will get data
-        
-
-        //change PhoneNumber to queried phone#
-        db.deleteOne(Delivery,{PhoneNumber: "09985861098"}, function(result) {
-            res.send();
-        })
-    },
-
     getCustomEdit: function (req,res) {
-        db.findOne(Delivery,{PhoneNumber: "09985861098"}, {}, function(result) {
-            //console.log(result);
-            if (result){
-                var entry = {
-                    Name: result.Name,
-                    PhoneNumber: result.PhoneNumber,
-                    Type: result.Type,
-                    Address: result.Address,
-                    Remarks: result.Remarks
-                }
-                console.log(entry);
-                res.render('edit');
-            } else {
-                console.log("not there rip")
-            }
-        })
+        res.render('update_delete_customer');
     },
 
     postCustomEdit: function (req,res) {
+        var todo = req.body.todo;
+
         var customer = {
             Name: req.body.name,
-            PhoneNumber: req.body.phonenumber,
+            PhoneNumber: req.body.phoneNum,
             Type: req.body.type,
             Address: req.body.address,
             Remarks: req.body.remarks
         }
 
-        console.log(delivery);
-        db.updateOne(Delivery,{PhoneNumber: "09985861098"}, delivery, (result) =>{
-            res.render('customer_table');
-        })
+        console.log(todo);
+        console.log(customer);
+
+        if (todo == "Update"){
+            db.updateOne(Customer,{PhoneNumber: customer.PhoneNumber}, customer, (result) =>{
+                res.render('customer_table');
+            });
+        }else if(todo == "Delete"){
+            db.deleteOne(Customer, customer, (result) => {
+                res.render('customer_table');
+            });
+        }
+        
     }
 }
 

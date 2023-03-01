@@ -31,7 +31,7 @@
       Add Customer
     </div>
 
-    <form>
+    <form action="/add_customer" method="post">
       <div class="form">
         <div class="input-field">
           <label for="name">Name/Company Name</label>
@@ -55,11 +55,12 @@
         </div>
         <div class="input-field">
           <label>Remarks</label>
-          <input type="text" placeholder="Enter remarks">
+          <input name="remarks" type="text" placeholder="Enter remarks">
         </div>
         <p></p>
         <div class="button">
-          <input type="submit" value="Submit" class="button add"></div>
+          <input type="submit" value="Submit" class="button add">
+        </div>
       </div>
     </form>
   </div>
