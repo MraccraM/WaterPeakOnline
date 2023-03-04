@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width">
   <title>Water Peak Online System</title>
   <link href="/css/delivery_table.css" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
-  <script type="text/javascript" src="/JS/deliveryJQuery.js"></script>
 </head>
 
 <body class="main-page" onload="sortDate()">
@@ -65,7 +63,7 @@
         {{#each order}}
           <tr>
             <td class="font">{{Name}}</td>
-            <td class="font">{{PhoneNumber}}</td>
+            <td class="font" id="phoneNum">{{PhoneNumber}}</td>
             <td class="font">{{Date}}</td>
             <td class="font">{{Type}}</td>
             <td class="font">{{Address}}</td>
@@ -75,7 +73,7 @@
             <td class="font">{{Remarks}}</td>
             <td>
               <span class = "update-button">
-                <a href="/update_order_page">Edit</a>
+                <a href="/update_order_page?phoneNum={{PhoneNumber}}">Edit</a>
               </span>
             </td>
           </tr>

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   x = -1;
   function filterType() {
     var table, tr, td, i, txt;
-    var option = ["OFFICE W/DISPENSER", "OFFICE W/O DISPENSER", "RESIDENTIAL", ""];
+    var option = ["OFFICE W/ DISPENSER", "OFFICE W/O DISPENSER", "RESIDENTIAL", ""];
     table = document.getElementById("t1");
     tr = table.getElementsByTagName("tr");
 

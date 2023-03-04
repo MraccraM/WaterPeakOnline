@@ -5,7 +5,7 @@ document.getElementById("btn-type").addEventListener("click", filter);
   x = -1;
   function filter() {
     var table, tr, td, i, txt;
-    var option = ["OFFICE W/DISPENSER","OFFICE W/O DISPENSER","RESIDENTIAL", ""];
+    var option = ["OFFICE W/ DISPENSER","OFFICE W/O DISPENSER","RESIDENTIAL", ""];
     table = document.getElementById("t1");
     tr = table.getElementsByTagName("tr");
 

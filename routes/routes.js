@@ -17,12 +17,10 @@ app.get('/update_customer_page', controller.getUpdateCustomer);
 
 // Delivery
 app.post('/add_order', controller.submitDelivDB);
-app.get('/update_order', controller.getDelivEdit);
 app.post('/edit_delivery', controller.postDelivEdit);
 
 //Customer
 app.post('/add_customer', controller.submitCustomDB);
-app.get('/update_customer', controller.getCustomEdit);
 app.post('/edit_customer', controller.postCustomEdit);
 
 module.exports = app;

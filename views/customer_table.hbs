@@ -6,11 +6,6 @@
   <meta name="viewport" content="width=device-width">
   <title>Water Peak Online System</title>
   <link href="/css/customer_table.css" rel="stylesheet" />
-  <script
-  src="https://code.jquery.com/jquery-3.6.3.js"
-  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-  crossorigin="anonymous"></script>
-  <script src="/JS/customerJQuery.js" type="text/javascript"></script>
 </head>
 
 <!-- Banner -->
@@ -64,7 +59,7 @@
         <td class="font">{{Remarks}}</td>
         <td>
           <span class = "update-button">
-            <input type="button" name="edit" value="edit" class="edit" {{!--href="/update_customer_page"--}}>{{!--Edit</input>--}}
+            <a href="/update_customer_page?phoneNum={{PhoneNumber}}">Edit</a>
           </span>
         </td>
       </tr>

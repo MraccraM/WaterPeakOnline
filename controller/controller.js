@@ -69,11 +69,38 @@ const controller = {
     },
 
     getUpdateOrder: function (req,res) {
-        res.render('update_delete_order');
+        var phoneNum = req.query.phoneNum;
+        db.findOne(Delivery, {PhoneNumber: phoneNum}, {}, function(result){
+            if(result){
+                var delivery = {
+                    Name: result.Name,
+                    PhoneNumber: result.PhoneNumber,
+                    Date: result.Date,
+                    Type: result.Type,
+                    Address: result.Address,
+                    GallonsOrdered: result.GallonsOrdered,
+                    AmountDue: result.AmountDue,
+                    Status: result.Status,
+                    Remarks: result.Remarks,
+                }
+
+                res.render('update_delete_order', {
+                    name: delivery.Name,
+                    phoneNum: delivery.PhoneNumber,
+                    date: delivery.Date,
+                    type: delivery.Type,
+                    address: delivery.Address,
+                    galordered: delivery.GallonsOrdered,
+                    amtdue: delivery.AmountDue,
+                    status: delivery.Status,
+                    remarks: delivery.Remarks
+                });
+            }
+        })
     },
 
     getUpdateCustomer: function (req,res) {
-        var phoneNum = req.query.PhoneNumber;
+        var phoneNum = req.query.phoneNum;
         db.findOne(Customer, {PhoneNumber: phoneNum}, {}, function(result){
             if(result){
                 var customer = {
@@ -84,19 +111,15 @@ const controller = {
                     Remarks: result.Remarks
                 }
 
-                //console.log(customer);
-
-                res.send(customer);
-                // res.render('update_delete_customer', {
-                //     name: customer.Name,
-                //     phoneNum: customer.PhoneNumber,
-                //     address: customer.Address,
-                //     type: customer.Type,
-                //     remarks: customer.Remarks
-                // });
+                res.render('update_delete_customer', {
+                    name: customer.Name,
+                    phoneNum: customer.PhoneNumber,
+                    address: customer.Address,
+                    type: customer.Type,
+                    remarks: customer.Remarks
+                });
             }
         })
-        //res.render('update_delete_customer');
     },
 
     //DeliveryDB operations
@@ -151,10 +174,6 @@ const controller = {
             }
             
         });
-    },
-
-    getDelivEdit: function (req,res) {
-        res.render('update_delete_order');
     },
 
     postDelivEdit: function (req,res) {
@@ -266,18 +285,6 @@ const controller = {
                     people});
              });
         });
-    },
-
-    getCustomEdit: function (req,res) {
-        var entry = req.query;
-        console.log(entry);
-        res.render('update_delete_customer', {
-                name: entry.Name,
-                phoneNum: entry.PhoneNumber,
-                address: entry.Address,
-                type: entry.Type,
-                remarks: entry.Remarks
-            });
     },
 
     postCustomEdit: function (req,res) {
