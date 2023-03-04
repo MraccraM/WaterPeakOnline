@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width">
   <title>Water Peak Online System</title>
   <link href="/css/customer_table.css" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
-  <script type="text/javascript" src="/JS/customerJQuery.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.3.js"
+  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+  crossorigin="anonymous"></script>
+  <script src="/JS/customerJQuery.js" type="text/javascript"></script>
 </head>
 
 <!-- Banner -->
@@ -55,13 +58,13 @@
     {{#each people}}
       <tr>
         <td class="font">{{Name}}</td>
-        <td class="font">{{PhoneNumber}}</td>
+        <td class="font" id="phoneNum">{{PhoneNumber}}</td>
         <td class="font">{{Address}}</td>
         <td class="font">{{Type}}</td>
         <td class="font">{{Remarks}}</td>
         <td>
           <span class = "update-button">
-            <a href="/update_customer_page">Edit</a>
+            <input type="button" name="edit" value="edit" class="edit" {{!--href="/update_customer_page"--}}>{{!--Edit</input>--}}
           </span>
         </td>
       </tr>

@@ -73,7 +73,30 @@ const controller = {
     },
 
     getUpdateCustomer: function (req,res) {
-        res.render('update_delete_customer');
+        var phoneNum = req.query.PhoneNumber;
+        db.findOne(Customer, {PhoneNumber: phoneNum}, {}, function(result){
+            if(result){
+                var customer = {
+                    Name: result.Name,
+                    PhoneNumber: result.PhoneNumber,
+                    Address: result.Address,
+                    Type: result.Type,
+                    Remarks: result.Remarks
+                }
+
+                //console.log(customer);
+
+                res.send(customer);
+                // res.render('update_delete_customer', {
+                //     name: customer.Name,
+                //     phoneNum: customer.PhoneNumber,
+                //     address: customer.Address,
+                //     type: customer.Type,
+                //     remarks: customer.Remarks
+                // });
+            }
+        })
+        //res.render('update_delete_customer');
     },
 
     //DeliveryDB operations
@@ -181,7 +204,7 @@ const controller = {
                         });
                     });
                 }else if(todo == "Delete"){
-                    db.deleteOne(Delivery, delivery, (result) => {
+                    db.deleteOne(Delivery, {PhoneNumber: delivery.PhoneNumber}, (result) => {
                         Delivery.find().lean().exec((err, docs2) => {
                             if( docs2 ){
                 
@@ -246,7 +269,15 @@ const controller = {
     },
 
     getCustomEdit: function (req,res) {
-        res.render('update_delete_customer');
+        var entry = req.query;
+        console.log(entry);
+        res.render('update_delete_customer', {
+                name: entry.Name,
+                phoneNum: entry.PhoneNumber,
+                address: entry.Address,
+                type: entry.Type,
+                remarks: entry.Remarks
+            });
     },
 
     postCustomEdit: function (req,res) {
@@ -284,7 +315,7 @@ const controller = {
                  });
             });
         }else if(todo == "Delete"){
-            db.deleteOne(Customer, customer, (result) => {
+            db.deleteOne(Customer, {PhoneNumber: customer.PhoneNumber}, (result) => {
                 Customer.find().lean().exec((err, docs2) => {
                     if( docs2 ){
                         var people = []

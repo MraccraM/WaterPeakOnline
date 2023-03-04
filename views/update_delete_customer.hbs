@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
   <link href="/css/add_customer.css" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" type="text/javascript"></script>
-  <script type="text/javascript" src="/JS/customerJQuery.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.3.js"
+  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+  crossorigin="anonymous"></script>
+  <script src="/JS/customerJQuery.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -37,19 +40,19 @@
       <div class="form">
         <div class="input-field">
           <label>Name/Company Name</label>
-          <input name="name" id="name" type="text" placeholder="Enter your name" required>
+          <input name="name" id="name" type="text" placeholder="Enter your name" value="" required>
         </div>
         <div class="input-field">
           <label>Mobile Number</label>
-          <input name="phoneNum" id="phoneNum" type="tel" placeholder="Enter your number"  pattern="[0-9]{11}" required>
+          <input name="phoneNum" id="phoneNum" type="tel" placeholder="Enter your number" value="" pattern="[0-9]{11}" required>
         </div>
         <div class="input-field">
           <label>Address</label>
-          <input name="address" id="address" type="text" placeholder="Enter address" required>
+          <input name="address" id="address" type="text" placeholder="Enter address" value="" required>
         </div>
         <div class="input-field">
           <label>Customer Type</label>
-          <select name="type" id="type">
+          <select name="type" id="type" value="">
             <option value="Residential">Residential</option>
             <option value="Office w/ Dispenser">Office w/ Dispenser</option>
             <option value="Office w/o Dispenser">Office w/o Dispenser</option>
@@ -57,7 +60,7 @@
         </div>
         <div class="input-field">
           <label>Remarks</label>
-          <input name="remarks" id="remarks" type="text" placeholder="Enter remarks">
+          <input name="remarks" id="remarks" type="text" placeholder="Enter remarks" value="">
         </div>
         <p></p>
         <div class="button">
