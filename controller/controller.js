@@ -31,6 +31,7 @@ const controller = {
                 var order = []
                 for(var x in docs2){
                     order.push({
+                        id: docs2[x]._id,
                         Name: docs2[x].Name,
                         PhoneNumber: docs2[x].PhoneNumber,
                         Date: docs2[x].Date,
@@ -55,6 +56,7 @@ const controller = {
                 var people = []
                 for(var x in docs2){
                     people.push({
+                        id: docs2[x]._id,
                         Name: docs2[x].Name,
                         PhoneNumber: docs2[x].PhoneNumber,
                         Address: docs2[x].Address,
@@ -69,8 +71,8 @@ const controller = {
     },
 
     getUpdateOrder: function (req,res) {
-        var phoneNum = req.query.phoneNum;
-        db.findOne(Delivery, {PhoneNumber: phoneNum}, {}, function(result){
+        var reqID = req.query.id;
+        db.findOne(Delivery, {_id: reqID}, {}, function(result){
             if(result){
                 var delivery = {
                     Name: result.Name,
@@ -85,6 +87,7 @@ const controller = {
                 }
 
                 res.render('update_delete_order', {
+                    id: result._id,
                     name: delivery.Name,
                     phoneNum: delivery.PhoneNumber,
                     date: delivery.Date,
@@ -100,8 +103,8 @@ const controller = {
     },
 
     getUpdateCustomer: function (req,res) {
-        var phoneNum = req.query.phoneNum;
-        db.findOne(Customer, {PhoneNumber: phoneNum}, {}, function(result){
+        var reqID = req.query.id;
+        db.findOne(Customer, {_id: reqID}, {}, function(result){
             if(result){
                 var customer = {
                     Name: result.Name,
@@ -112,6 +115,7 @@ const controller = {
                 }
 
                 res.render('update_delete_customer', {
+                    id: result._id,
                     name: customer.Name,
                     phoneNum: customer.PhoneNumber,
                     address: customer.Address,
@@ -125,8 +129,6 @@ const controller = {
     //DeliveryDB operations
     submitDelivDB: function (req,res) {
         db.findOne(Customer,{PhoneNumber: req.body.phoneNum}, {}, function (result){
-            // var x = JSON.stringify(result);
-            // customer = JSON.parse(x);
             if(result){
                 var customer = result;
             
@@ -146,31 +148,10 @@ const controller = {
         
                 db.insertOne(Delivery, delivery, (result) => {
                     console.log("sent to db");
-                    Delivery.find().lean().exec((err, docs2) => {
-                        if( docs2 ){
-            
-                            var order = []
-                            for(var x in docs2){
-                                order.push({
-                                    Name: docs2[x].Name,
-                                    PhoneNumber: docs2[x].PhoneNumber,
-                                    Date: docs2[x].Date,
-                                    Type: docs2[x].Type,
-                                    Address: docs2[x].Address,
-                                    GallonsOrdered: docs2[x].GallonsOrdered,
-                                    AmountDue: docs2[x].AmountDue,
-                                    Status: docs2[x].Status,
-                                    Remarks: docs2[x].Remarks,
-                                });
-                            }
-                        }
-                        res.render('delivery_table', {
-                            order});
-                     });
+                    res.redirect('/delivery_table');
                 });
             } else {
                 console.log("User not in customerDB");
-                //replace with a way to notify the user
             }
             
         });
@@ -178,12 +159,12 @@ const controller = {
 
     postDelivEdit: function (req,res) {
         db.findOne(Customer,{PhoneNumber: req.body.phoneNum}, {}, function (result){
-            console.log(req.body.phoneNum);
             if(result){
                 var customer = result;
                 var todo = req.body.todo;
             
                 var delivery = {
+                    id: req.query.id,
                     Name: req.body.name,
                     PhoneNumber: req.body.phoneNum,
                     Date: req.body.date,
@@ -199,52 +180,12 @@ const controller = {
                 console.log(delivery);
 
                 if (todo == "Update"){
-                    db.updateOne(Delivery,{PhoneNumber: delivery.PhoneNumber}, delivery, (result) =>{
-                        Delivery.find().lean().exec((err, docs2) => {
-                            if( docs2 ){
-                
-                                var order = []
-                                for(var x in docs2){
-                                    order.push({
-                                        Name: docs2[x].Name,
-                                        PhoneNumber: docs2[x].PhoneNumber,
-                                        Date: docs2[x].Date,
-                                        Type: docs2[x].Type,
-                                        Address: docs2[x].Address,
-                                        GallonsOrdered: docs2[x].GallonsOrdered,
-                                        AmountDue: docs2[x].AmountDue,
-                                        Status: docs2[x].Status,
-                                        Remarks: docs2[x].Remarks,
-                                    });
-                                }
-                            }
-                            res.render('delivery_table', {
-                                order});
-                        });
+                    db.updateOne(Delivery,{_id: delivery.id}, delivery, (result) =>{
+                        res.redirect('/delivery_table');
                     });
                 }else if(todo == "Delete"){
-                    db.deleteOne(Delivery, {PhoneNumber: delivery.PhoneNumber}, (result) => {
-                        Delivery.find().lean().exec((err, docs2) => {
-                            if( docs2 ){
-                
-                                var order = []
-                                for(var x in docs2){
-                                    order.push({
-                                        Name: docs2[x].Name,
-                                        PhoneNumber: docs2[x].PhoneNumber,
-                                        Date: docs2[x].Date,
-                                        Type: docs2[x].Type,
-                                        Address: docs2[x].Address,
-                                        GallonsOrdered: docs2[x].GallonsOrdered,
-                                        AmountDue: docs2[x].AmountDue,
-                                        Status: docs2[x].Status,
-                                        Remarks: docs2[x].Remarks,
-                                    });
-                                }
-                            }
-                            res.render('delivery_table', {
-                                order});
-                        });
+                    db.deleteOne(Delivery,{_id: delivery.id}, (result) => {
+                        res.redirect('/delivery_table');
                     });
                 }
             } else {
@@ -267,23 +208,7 @@ const controller = {
 
         db.insertOne(Customer, customer, (result) => {
             console.log("sent to db");
-            Customer.find().lean().exec((err, docs2) => {
-                if( docs2 ){
-    
-                    var people = []
-                    for(var x in docs2){
-                        people.push({
-                            Name: docs2[x].Name,
-                            PhoneNumber: docs2[x].PhoneNumber,
-                            Address: docs2[x].Address,
-                            Type: docs2[x].Type,
-                            Remarks: docs2[x].Remarks,
-                        });
-                    }
-                }
-                res.render('customer_table', {
-                    people});
-             });
+            res.redirect('/customer_table');
         });
     },
 
@@ -291,6 +216,7 @@ const controller = {
         var todo = req.body.todo;
 
         var customer = {
+            id: req.query.id,
             Name: req.body.name,
             PhoneNumber: req.body.phoneNum,
             Type: req.body.type,
@@ -302,43 +228,12 @@ const controller = {
         console.log(customer);
 
         if (todo == "Update"){
-            db.updateOne(Customer,{PhoneNumber: customer.PhoneNumber}, customer, (result) =>{
-                Customer.find().lean().exec((err, docs2) => {
-                    if( docs2 ){
-        
-                        var people = []
-                        for(var x in docs2){
-                            people.push({
-                                Name: docs2[x].Name,
-                                PhoneNumber: docs2[x].PhoneNumber,
-                                Address: docs2[x].Address,
-                                Type: docs2[x].Type,
-                                Remarks: docs2[x].Remarks,
-                            });
-                        }
-                    }
-                    res.render('customer_table', {
-                        people});
-                 });
+            db.updateOne(Customer,{_id: customer.id}, customer, (result) =>{
+                res.redirect('/customer_table');
             });
         }else if(todo == "Delete"){
-            db.deleteOne(Customer, {PhoneNumber: customer.PhoneNumber}, (result) => {
-                Customer.find().lean().exec((err, docs2) => {
-                    if( docs2 ){
-                        var people = []
-                        for(var x in docs2){
-                            people.push({
-                                Name: docs2[x].Name,
-                                PhoneNumber: docs2[x].PhoneNumber,
-                                Address: docs2[x].Address,
-                                Type: docs2[x].Type,
-                                Remarks: docs2[x].Remarks,
-                            });
-                        }
-                    }
-                    res.render('customer_table', {
-                        people});
-                 });
+            db.deleteOne(Customer,{_id: customer.id}, (result) => {
+                res.redirect('/customer_table');
             });
         }
         
