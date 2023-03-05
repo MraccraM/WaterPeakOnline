@@ -128,7 +128,9 @@ const controller = {
 
     //DeliveryDB operations
     submitDelivDB: function (req,res) {
-        db.findOne(Customer,{PhoneNumber: req.body.phoneNum}, {}, function (result){
+        db.findOne(Customer,{Name: req.body.name, 
+                            PhoneNumber: req.body.phoneNum,
+                            Address: req.body.address}, {}, function (result){
             if(result){
                 var customer = result;
             
