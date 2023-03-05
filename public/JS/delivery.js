@@ -104,7 +104,7 @@ function formatDate() {
   var input = document.getElementById("date").value;
   if (input != ""){
   const items = input.split(/-\s*/);
-  var date = items[1] + "/" + items[2] + "/" + items[0]
+  var date = items[0] + "-" + items[1] + "-" + items[2]
   findDate(date);
   }
   else{ 
