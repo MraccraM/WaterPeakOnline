@@ -1,6 +1,7 @@
 const db = require("../database/db.js");
 const Delivery = require('../database/models/deliveryDB');
 const Customer = require('../database/models/customerDB');
+const alert = require('alert');
 
 const controller = {
     getFavicon: function (req, res) {
@@ -153,6 +154,7 @@ const controller = {
                     res.redirect('/delivery_table');
                 });
             } else {
+                alert("User not in Database!");
                 console.log("User not in customerDB");
             }
             
@@ -182,15 +184,32 @@ const controller = {
                 console.log(delivery);
 
                 if (todo == "Update"){
-                    db.updateOne(Delivery,{_id: delivery.id}, delivery, (result) =>{
-                        res.redirect('/delivery_table');
-                    });
+                    if(delivery.Name == customer.Name 
+                        && delivery.PhoneNumber == customer.PhoneNumber 
+                        && delivery.Address == customer.Address){
+                            db.updateOne(Delivery,{_id: delivery.id}, delivery, (result) =>{
+                                res.redirect('/delivery_table');
+                            });
+                        }
+                    else{
+                        alert("Cannot edit: User not in Database!");
+                        console.log("User not in customerDB");
+                    }
                 }else if(todo == "Delete"){
-                    db.deleteOne(Delivery,{_id: delivery.id}, (result) => {
-                        res.redirect('/delivery_table');
-                    });
+                    if(delivery.Name == customer.Name 
+                        && delivery.PhoneNumber == customer.PhoneNumber 
+                        && delivery.Address == customer.Address){
+                            db.deleteOne(Delivery,{_id: delivery.id}, (result) => {
+                                res.redirect('/delivery_table');
+                            });
+                        }
+                    else{
+                        alert("Cannot edit: User not in Database!");
+                        console.log("User not in customerDB");
+                    }
                 }
             } else {
+                alert("Cannot edit: User not in Database!");
                 console.log("User not in customerDB");
             }
         });
