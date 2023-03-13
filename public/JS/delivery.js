@@ -135,9 +135,13 @@ function findDate(date) {
       else {
         tr[i].style.display = "none";
       }
-
+      document.getElementById("filler").setAttribute("hidden", true);
       document.getElementById("revenue").removeAttribute("hidden");
-      document.getElementById("revenue").innerHTML = "Revenue = " + rev;
+      document.getElementById("revenue").innerHTML = "[" +  date + "]       " + " Revenue = Php " + rev;
+      var revenue = document.getElementById("revenue");
+      revenue.style.fontSize="25px";
+      revenue.style.marginLeft="15%";
+      
     }
   }
 }
@@ -155,6 +159,7 @@ function showAllDate(){
     }
   }
   document.getElementById("revenue").setAttribute("hidden", true);
+  document.getElementById("filler").removeAttribute("hidden");
 }
 
 

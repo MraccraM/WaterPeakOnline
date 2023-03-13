@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
-  <link href="/css/add_order.css" rel="stylesheet" />
+  <link href="/css/update_delete_order.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -35,11 +35,11 @@
     <div class="form">
         <div class="input-field">
           <label>Name/Company Name</label>
-          <input name="name" type="text" placeholder="Enter your name" value="{{name}}" required disabled>
+          <input name="name" type="text" placeholder="Enter your name" value="{{name}}" required readonly>
         </div>
         <div class="input-field">
           <label>Mobile Number</label>
-          <input name="phoneNum" type="tel" placeholder="Enter your number" value="{{phoneNum}}" pattern="[0-9]{11}" required disabled>
+          <input name="phoneNum" type="tel" placeholder="Enter your number" value="{{phoneNum}}" pattern="[0-9]{11}" required readonly>
         </div>
         <div class="input-field">
           <label>Date</label>
@@ -47,7 +47,7 @@
         </div>
         <div class="input-field">
           <label>Address</label>
-          <input name="address" type="text" placeholder="Enter address" value="{{address}}" required disabled>
+          <input name="address" type="text" placeholder="Enter address" value="{{address}}" required readonly>
         </div>
         <div class="input-field">
           <label>Gallons Ordered</label>

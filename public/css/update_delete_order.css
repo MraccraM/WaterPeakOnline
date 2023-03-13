@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-/* @font-face {
+@font-face {
   font-family: "Cooper Black";
   src: url("/fonts/cooper-black.otf");
-} */
+}
 
 body {
     background: #5683AB45;
@@ -16,7 +16,7 @@ body {
 .add-order{
   max-width: 450px;
   background: #116D9B;
-  margin-top: 3%;
+  margin: 150px 150px;
   padding: 15px;
   box-shadow: 5px 10px 18px #888888;
   border-radius: 30px;
@@ -212,42 +212,10 @@ body {
     
 }
 
-.search-form {
-    margin-top: 6%;
-    margin-left: 32.5%;
-    width:490px;
-    height: 50px;
-    display: flex;
+input:disabled{
+  color: #eeeeee;
 }
 
-.search-button{
-  margin-bottom: 0px;
-  border: none;
-  box-shadow: #888888;
-  font-size: 13px;
-  color:#ffffff;
-  line-height:25px;
-  text-align:center;
-  padding: 3px 5px;
-}
-
-.prefill-form .prefill {
-  width: 380px;
-  height: 24px;
-  font-size: 16px; 
-  padding: 12px 20px 12px 40px; 
-  border: 1px solid #ddd;
-  outline: none;
-}
-
-
-.prefill-form input:valid{
-  border: 2px solid lightgreen;
-}
-
-.prefill-form input:invalid{
-  border: 2px solid red;
-}
 
 
 
