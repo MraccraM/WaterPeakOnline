@@ -26,11 +26,11 @@
       </div>
   </div>
 
-  <form class="search-form">
+  <form class="search-form" action="/search" method="post">
     <div class="prefill-form">
-    <input class="prefill" id="prefill" name="prefill" type="tel" placeholder="Enter number to prefill" pattern="[0-9]{11}"> 
+    <input name="search" class="prefill" id="prefill" type="tel" placeholder="Search for customer" pattern="[0-9]{11}"> 
     </div>
-    <input class="search-button add" type="submit" value="Submit">
+    <input class="search-button add" type="submit" value="Search">
   </form>
 
   <div class="add-order">
@@ -42,11 +42,11 @@
       <div class="form">
         <div class="input-field">
           <label>Name/Company Name</label>
-          <input name="name" type="text" placeholder="Enter your name" required>
+          <input name="name" type="text" placeholder="Enter your name" value="{{name}}" required>
         </div>
         <div class="input-field">
           <label>Mobile Number</label>
-          <input name="phoneNum" type="tel" placeholder="Enter your number"  pattern="[0-9]{11}" required>
+          <input name="phoneNum" type="tel" placeholder="Enter your number" value="{{phoneNum}}"  pattern="[0-9]{11}" required>
         </div>
         <div class="input-field">
           <label>Date</label>
@@ -54,7 +54,7 @@
         </div>
         <div class="input-field">
           <label>Address</label>
-          <input name="address" type="text" placeholder="Enter address" required>
+          <input name="address" type="text" placeholder="Enter address" value="{{address}}" required>
         </div>
         <div class="input-field">
           <label>Gallons Ordered</label>
@@ -74,7 +74,7 @@
         </div>
         <div class="input-field">
           <label>Remarks</label>
-          <input name="remarks" type="text" placeholder="Enter remarks">
+          <input name="remarks" type="text" placeholder="Enter remarks" value="{{remarks}}">
         </div>
         <p></p>
         <div class="button">

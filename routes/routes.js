@@ -16,6 +16,7 @@ app.get('/update_order_page', controller.getUpdateOrder);
 app.get('/update_customer_page', controller.getUpdateCustomer);
 
 // Delivery
+app.post('/search', controller.getSearchDB)
 app.post('/add_order', controller.submitDelivDB);
 app.post('/edit_delivery', controller.postDelivEdit);
 

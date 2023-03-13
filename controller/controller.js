@@ -128,6 +128,24 @@ const controller = {
     },
 
     //DeliveryDB operations
+    getSearchDB: function(req, res) {
+        // console.log(req.body.search);
+        db.findOne(Customer, {PhoneNumber: req.body.search}, {}, function (result){
+            if(result){
+                res.render('add_order', {
+                    name: result.Name,
+                    phoneNum: result.PhoneNumber,
+                    address: result.Address,
+                    remarks: result.Remarks
+                });
+            }
+            else {
+                alert("User not in Database!");
+                console.log("User not in customerDB");
+            }
+        });
+    },
+
     submitDelivDB: function (req,res) {
         db.findOne(Customer,{Name: req.body.name, 
                             PhoneNumber: req.body.phoneNum,
