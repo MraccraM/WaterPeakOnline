@@ -31,9 +31,10 @@ document.getElementById("btn-type").addEventListener("click", filter);
 
 
 
+flag = 1
 /* Alphabetizes customer table list */
 document.addEventListener("DOMContentLoaded", function() {
-document.getElementById("btn-name").addEventListener("click", alphabetize);
+  document.getElementById("btn-name").addEventListener("click", alphabetize);
 
   function alphabetize() {
     var table, rows, i, x, y, shouldSwitch, switching, sortBy, n = 0;
@@ -41,7 +42,9 @@ document.getElementById("btn-name").addEventListener("click", alphabetize);
     switching = true;
     sortBy = "asc";
     /* While there is something to switch*/
-    while (switching) {
+    
+    if (flag == 1){
+      while (switching) {
       switching = false;
       rows = table.rows;
 
@@ -65,6 +68,12 @@ document.getElementById("btn-name").addEventListener("click", alphabetize);
         switching = true;
       }
     }
+
+      flag *= -1
+    }
+    else if (flag == -1){
+      window.location.reload();
+      flag*= -1
+    }
   }
 });
-

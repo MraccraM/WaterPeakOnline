@@ -1,8 +1,8 @@
 
-/* @font-face {
+@font-face {
   font-family: "Cooper Black";
   src: url("/fonts/cooper-black.otf");
-} */
+}
 
 body {
   background: #5683AB45;
@@ -174,7 +174,7 @@ a:link, a:visited, a:hover, a:active {
 
 /* Highlights odd row's background */
 tr:nth-child(odd){  
-    background-color: #4597c0;
+    background-color:  rgba(69, 151, 192, 0.6);
     border: 0.2px solid rgba(0, 0, 0, 0.4);
 }
 
@@ -222,8 +222,9 @@ td{
 #c-phonenumber{
   width: 200px;
 }
+
 #name{
-  margin-left: 60px;
+  text-align: left;
 }
 
 #remarks{
@@ -284,13 +285,24 @@ width:80px;
 .update-button{
   text-decoration-color: none;
   background-color: #e8e8e8;
-  padding: 3px;
+  padding: 2px;
   color: #FFFFFF;
   border-radius: 7px;
   border:#121b32;
   text-transform: uppercase;
+  font-size: 15px;
 }
 
-.font{
-  font-size: 15px;
+
+#left-align{
+text-align: left;
+}
+
+.darkblue{
+background-color: #4597c0;
+color:white;
+}
+
+#remarks{
+width:110px;
 }

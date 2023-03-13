@@ -1,8 +1,8 @@
 
-/* @font-face {
+@font-face {
   font-family: "Cooper Black";
   src: url("/fonts/cooper-black.otf");
-} */
+}
 
 body {
   background: #5683AB45;
@@ -148,8 +148,9 @@ body {
 
 /* Highlights odd row's background */
 tr:nth-child(odd){  
-    background-color: #4597c0;
+    background-color:  rgba(69, 151, 192, 0.6);
     border: 0.2px solid rgba(0, 0, 0, 0.4);
+    ;
 }
 
 /* Table cells */
@@ -168,6 +169,7 @@ td{
   height: 45px;
   position: sticky;
   top: 0;
+  color: white;
 }
 
 /* Makes the address column wider */
@@ -181,7 +183,7 @@ td{
 }
 
 #name{
-  margin-left: 70px;
+  text-align: left;
 }
 
 #type{
@@ -263,6 +265,3 @@ a:link, a:visited, a:hover, a:active {
   margin-left: 30px;
 }
 
-.font{
-  font-size: 15px;
-}
