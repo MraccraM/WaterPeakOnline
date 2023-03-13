@@ -115,7 +115,9 @@ function formatDate() {
 
 /* Date filter*/
 function findDate(date) {
-  var table, tr, td, i, txt;
+  var table, tr, td, i, txt, rev, td1, temp;
+  temp = 0;
+  rev = 0;
   table = document.getElementById("t1");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
@@ -123,15 +125,19 @@ function findDate(date) {
     if (td) {
       txt = td.textContent || td.innerText;
 
-
       if (txt == date) {
         tr[i].style.display = "";
+        if(tr[i].getElementsByTagName("td")[7].textContent == "Delivered"){
+          temp = parseInt(tr[i].getElementsByTagName("td")[6].innerHTML);
+          rev += temp;
+        }
       }
-
       else {
         tr[i].style.display = "none";
       }
 
+      document.getElementById("revenue").removeAttribute("hidden");
+      document.getElementById("revenue").innerHTML = "Revenue = " + rev;
     }
   }
 }
@@ -148,6 +154,7 @@ function showAllDate(){
       tr[i].style.display = "";
     }
   }
+  document.getElementById("revenue").setAttribute("hidden", true);
 }
 
 
