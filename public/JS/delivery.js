@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function() {
         x = x % 4;
       }
     }
+    document.getElementById("revenue").setAttribute("hidden", true);
+    document.getElementById("filler").removeAttribute("hidden");
   }
 });
 
@@ -59,6 +61,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
       }
     }
+    document.getElementById("revenue").setAttribute("hidden", true);
+    document.getElementById("filler").removeAttribute("hidden");
   }
 });
 
