@@ -23,5 +23,5 @@ db.connect();
 
 app.listen(port, function() {
     console.log("Server is running at:");
-    console.log("http://" + hostname + ":" + port);
+    //console.log("http://" + hostname + ":" + port);
 })
