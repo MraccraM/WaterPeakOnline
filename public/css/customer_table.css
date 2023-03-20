@@ -203,6 +203,7 @@ td{
   position: sticky;
   top: 0;
   width: 180px;
+  color:white;
 }
 
 /* Makes the address column wider */
@@ -308,5 +309,5 @@ width:110px;
 }
 
 .font{
-  line-height: 15px;
+  line-height: 20px;
 }
