@@ -130,6 +130,9 @@ const controller = {
     //DeliveryDB operations
     getSearchDB: function(req, res) {
         // console.log(req.body.search);
+        inp = req.body.search
+        query = inp.toUpperCase();
+        console.log(query);
         db.findOne(Customer, {PhoneNumber: req.body.search}, {}, function (result){
             if(result){
                 res.render('add_order', {
@@ -140,8 +143,20 @@ const controller = {
                 });
             }
             else {
-                alert("User not in Database!");
-                console.log("User not in customerDB");
+                db.findOne(Customer, {Address: req.body.search}, {}, function (result){
+                    if(result){
+                        res.render('add_order', {
+                            name: result.Name,
+                            phoneNum: result.PhoneNumber,
+                            address: result.Address,
+                            remarks: result.Remarks
+                        });
+                    }
+                    else{
+                        alert("User not in Database!");
+                        console.log("User not in customerDB");
+                    }
+                })
             }
         });
     },
