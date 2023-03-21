@@ -133,7 +133,7 @@ const controller = {
         inp = req.body.search
         query = inp.toUpperCase();
         console.log(query);
-        db.findOne(Customer, {PhoneNumber: req.body.search}, {}, function (result){
+        db.findOne(Customer, {PhoneNumber: query}, {}, function (result){
             if(result){
                 res.render('add_order', {
                     name: result.Name,
@@ -143,7 +143,7 @@ const controller = {
                 });
             }
             else {
-                db.findOne(Customer, {Address: req.body.search}, {}, function (result){
+                db.findOne(Customer, {Address: query}, {}, function (result){
                     if(result){
                         res.render('add_order', {
                             name: result.Name,
