@@ -130,9 +130,8 @@ const controller = {
     //DeliveryDB operations
     getSearchDB: function(req, res) {
         // console.log(req.body.search);
-        inp = req.body.search
-        query = inp.toUpperCase();
-        console.log(query);
+        let inp = req.body.search
+        let query = inp.toUpperCase();
         db.findOne(Customer, {PhoneNumber: query}, {}, function (result){
             if(result){
                 res.render('add_order', {
@@ -250,11 +249,13 @@ const controller = {
 
     //CustomerDB operations
     submitCustomDB: function (req,res) {
+        let inp = req.body.address;
+        let add = inp.toUpperCase();
         var customer = {
             Name: req.body.name,
             PhoneNumber: req.body.phoneNum,
             Type: req.body.type,
-            Address: req.body.address,
+            Address: add,
             Remarks: req.body.remarks
         }
 
@@ -268,13 +269,15 @@ const controller = {
 
     postCustomEdit: function (req,res) {
         var todo = req.body.todo;
+        let inp = req.body.address;
+        let add = inp.toUpperCase();
 
         var customer = {
             id: req.query.id,
             Name: req.body.name,
             PhoneNumber: req.body.phoneNum,
             Type: req.body.type,
-            Address: req.body.address,
+            Address: add,
             Remarks: req.body.remarks
         }
 
