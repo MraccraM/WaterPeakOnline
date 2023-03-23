@@ -154,7 +154,7 @@ const controller = {
                     else{
                         res.render('add_order', {
                             name: "User not in Database!",
-                            address: "User not in Database!",
+                            address: "User not in Database!"
                         });
                         alert("User not in Database!");
                         console.log("User not in customerDB");
