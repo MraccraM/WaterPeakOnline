@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width">
   <title>Water Peak Online System</title>
   <link href="/css/customer_table.css" rel="stylesheet" />
+  <link href="/css/tabs.css" rel="stylesheet" />
 </head>
 
 <!-- Banner -->
@@ -25,48 +26,81 @@
         <div class="footer">
             <p class="footer-text">Copyright © 2023 | G2 Solutions</p>
         </div>
-    </div> 
+    </div>
 
-<div class="table-box">
-  <table class="table" id="t1">
+    <p class="filler"></p>
 
-    <th class="c-status-bar">
-      <div class="filter-box">
-        <span class="filter-text" id="name">NAME</span>
-        <button class="btn-filter c-btn-margin" id="btn-name"> V </button>
-      </div>
-    </th>
+    <div class="tab" id="tab_menu">
 
-    <th class="c-status-bar"id="c-phonenumber">PHONE NUMBER</th>
-    <th class="c-status-bar" id="c-address">ADDRESS</th>
+        <a href="/add_order_page">
+          <button class="tab-button">
+            <img src="/images/addOrder.png" alt="addordertab"/>
+            <span>Add Order</span>
+          </button>
+        </a>
+        
+        <a href="/delivery_table">
+          <button class="tab-button">
+            <img src="/images/deliveryTracker.png" alt="deliverytrackerpng"/>
+            <span>Delivery Tracker</span>
+          </button>
+        </a>
 
-    <th class="c-status-bar">
-      <div class="filter-box">
-        <span class="filter-text">TYPE</span>
-        <button class="btn-filter c-btn-margin" id="btn-type"> V </button>
-      </div>
-    </th>
+        <a href="/add_customer_page">
+          <button class="tab-button">
+            <img src="/images/addCustomer.png" alt="addcustomertab"/>
+            <span>Add Customer</span>
+          </button>
+        </a>
 
-    <th class="c-status-bar" id="remarks">REMARKS</th>
-    <th class="c-status-bar" id="update">UPDATE</th>
+        <a href="/customer_table">
+          <button class="tab-button">
+            <img src="/images/customerDatabase.png" alt="customerdbpng"/>
+            <span>Customer Database</span>
+          </button>
+        </a> 
+    </div>
 
-    {{#each people}}
-      <tr>
-        <td class="font" id="name">{{Name}}</td>
-        <td class="font" id="phoneNum">{{PhoneNumber}}</td>
-        <td class="font"><a href="https://www.google.com/maps?q={{Address}}" target="_blank">{{Address}}</a></td>
-        <td class="font">{{Type}}</td>
-        <td class="font">{{Remarks}}</td>
-        <td>
-          <span class = "update-button">
-            <a href="/update_customer_page?id={{id}}">Edit</a>
-          </span>
-        </td>
-      </tr>
-    {{/each}} 
-    
-  </table>
-</div>
+    <div class="table-box">
+      <table class="table" id="t1">
+
+        <th class="c-status-bar">
+          <div class="filter-box">
+            <span class="filter-text" id="name">NAME</span>
+            <button class="btn-filter c-btn-margin" id="btn-name"> V </button>
+          </div>
+        </th>
+
+        <th class="c-status-bar"id="c-phonenumber">PHONE NUMBER</th>
+        <th class="c-status-bar" id="c-address">ADDRESS</th>
+
+        <th class="c-status-bar">
+          <div class="filter-box">
+            <span class="filter-text">TYPE</span>
+            <button class="btn-filter c-btn-margin" id="btn-type"> V </button>
+          </div>
+        </th>
+
+        <th class="c-status-bar" id="remarks">REMARKS</th>
+        <th class="c-status-bar" id="update">UPDATE</th>
+
+        {{#each people}}
+          <tr>
+            <td class="font" id="name">{{Name}}</td>
+            <td class="font" id="phoneNum">{{PhoneNumber}}</td>
+            <td class="font"><a href="https://www.google.com/maps?q={{Address}}" target="_blank">{{Address}}</a></td>
+            <td class="font">{{Type}}</td>
+            <td class="font">{{Remarks}}</td>
+            <td>
+              <span class = "update-button">
+                <a href="/update_customer_page?id={{id}}">Edit</a>
+              </span>
+            </td>
+          </tr>
+        {{/each}} 
+        
+      </table>
+    </div>
   <br><br><br>
   <script src="/JS/customer.js"></script>
 </body>
