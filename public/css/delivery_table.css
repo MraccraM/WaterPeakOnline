@@ -4,6 +4,8 @@
   src: url("/fonts/cooper-black.otf");
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 body {
   background: #5683AB45;
   overflow-x: hidden;
@@ -129,9 +131,10 @@ body {
   height: 440px;
   overflow-x: hidden;
   overflow-y: scroll;
-  position: absolute;
   width: 1200px;
-  margin-left: 15%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 
@@ -156,7 +159,8 @@ tr:nth-child(odd){
 td{
   border: 0;
   border-collapse: collapse;
-  font-family: 'Signika';
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
   text-align: center;
   word-wrap: break-word;
 }

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width">
   <title>Water Peak Online System</title>
   <link href="/css/delivery_table.css" rel="stylesheet" />
+  <link href="/css/tabs.css" rel="stylesheet" />
 </head>
 
 <body class="main-page">
@@ -28,6 +29,38 @@
   <p id="filler2"></p>
   <p id="filler"></p>
   <p id="revenue" hidden></p><p id="php" hidden></div>
+
+    <div class="tab" id="tab_menu">
+
+        <a href="/add_order_page">
+          <button class="tab-button">
+            <img src="/images/addOrder.png" alt="addordertab"/>
+            <span>Add Order</span>
+          </button>
+        </a>
+        
+        <a href="/delivery_table">
+          <button class="tab-button">
+            <img src="/images/deliveryTracker.png" alt="deliverytrackerpng"/>
+            <span>Delivery Tracker</span>
+          </button>
+        </a>
+
+        <a href="/add_customer_page">
+          <button class="tab-button">
+            <img src="/images/addCustomer.png" alt="addcustomertab"/>
+            <span>Add Customer</span>
+          </button>
+        </a>
+
+        <a href="/customer_table">
+          <button class="tab-button">
+            <img src="/images/customerDatabase.png" alt="customerdbpng"/>
+            <span>Customer Database</span>
+          </button>
+        </a> 
+    </div>
+  
     <div class="table-box">
       <table class="table" id="t1">
         <th class="status-bar">NAME</th>
