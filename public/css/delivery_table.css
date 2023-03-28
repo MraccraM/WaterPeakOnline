@@ -220,6 +220,8 @@ td{
 /* Type filter button enlarging when hovered */
 .btn-filter:hover{
   transform: scale(1.05);
+  background-color: #ddd;
+  cursor: pointer;
 }
 
 .update-button{
@@ -233,14 +235,29 @@ td{
   font-size: 15px;
 }
 
-a:link, a:visited, a:hover, a:active { 
+.update-button:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+a:link, a:visited, a:active { 
   color: black;
   text-decoration:none;
+}
+
+a:hover {
+  text-decoration: double;
+  cursor: pointer;
 }
 
 #date{
   width:17px;
   margin-left: 5px;
+}
+
+#date:hover {
+  background-color: #ddd;
+  cursor: pointer;
 }
 
 #form{
@@ -279,11 +296,16 @@ a:link, a:visited, a:hover, a:active {
   margin-top: 0px;
   text-align:center;
   padding: 5px 7px;
-  background-color: #5e89cfff;
+  background-color: #4597c0;
   margin-left: 90%;
   margin-top: -25px;
   margin-bottom:20px;
   height:25px;
   width:100px;
+}
+
+.button:hover{
+    background-color: #ddd;
+    cursor: pointer;
 }
 

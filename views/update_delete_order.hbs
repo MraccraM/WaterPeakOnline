@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="/css/update_delete_order.css" rel="stylesheet" />
+  <title>Update Delivery - WPOS</title>
+  <link href="/css/add_order.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -26,56 +26,57 @@
       </div>
   </div>
 
-  <div class="add-order">
-    <div class="title">
-    Update Order
-    </div>
+  <br><br><br><br><br><br>
 
-  <form id="edit_delivery" method="post" action="/edit_delivery?id={{id}}">
-    <div class="form">
-        <div class="input-field">
-          <label>Name/Company Name</label>
-          <input name="name" type="text" placeholder="Enter your name" value="{{name}}" required readonly>
+  <div class="add-order">
+    <div class="title">Update Order</div>
+
+    <form id="edit_delivery" method="post" action="/edit_delivery?id={{id}}">
+      <div class="form">
+          <div class="input-field">
+            <label>Name/Company Name</label>
+            <input name="name" type="text" placeholder="Enter your name" value="{{name}}" required readonly>
+          </div>
+          <div class="input-field">
+            <label>Mobile Number</label>
+            <input name="phoneNum" type="tel" placeholder="Enter your number" value="{{phoneNum}}" pattern="[0-9]{11}" required readonly>
+          </div>
+          <div class="input-field">
+            <label>Date</label>
+            <input name="date" value="{{date}}" type="date" required>
+          </div>
+          <div class="input-field">
+            <label>Address</label>
+            <input name="address" type="text" placeholder="Enter address" value="{{address}}" required readonly>
+          </div>
+          <div class="input-field">
+            <label>Gallons Ordered</label>
+            <input name="galordered" type="number" placeholder="Enter number of gallons" value="{{galordered}}" min="1" required>
+          </div>
+          <div class="input-field">
+            <label>Amount To be Paid</label>
+            <input name="amtdue" type="number" placeholder="Enter amount" value="{{amtdue}}" min="0" required>
+          </div>
+          <div class="input-field">
+            <label>Status</label>
+            <select name="status" value="{{type}}">
+              <option value="Pending">Pending</option>
+              <option value="Delivered">Delivered</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label>Remarks</label>
+            <input name="remarks" type="text" placeholder="Enter remarks" value="{{remarks}}">
+          </div>
+          <p></p>
+          <div class="button">
+          <input type="submit" name="todo" value="Update" class="button update">
+          <input type="submit" name="todo" value="Delete" class="button delete">
         </div>
-        <div class="input-field">
-          <label>Mobile Number</label>
-          <input name="phoneNum" type="tel" placeholder="Enter your number" value="{{phoneNum}}" pattern="[0-9]{11}" required readonly>
-        </div>
-        <div class="input-field">
-          <label>Date</label>
-          <input name="date" value="{{date}}" type="date" required>
-        </div>
-        <div class="input-field">
-          <label>Address</label>
-          <input name="address" type="text" placeholder="Enter address" value="{{address}}" required readonly>
-        </div>
-        <div class="input-field">
-          <label>Gallons Ordered</label>
-          <input name="galordered" type="number" placeholder="Enter number of gallons" value="{{galordered}}" min="1" required>
-        </div>
-        <div class="input-field">
-          <label>Amount To be Paid</label>
-          <input name="amtdue" type="number" placeholder="Enter amount" value="{{amtdue}}" min="0" required>
-        </div>
-        <div class="input-field">
-          <label>Status</label>
-          <select name="status" value="{{type}}">
-            <option value="Pending">Pending</option>
-            <option value="Delivered">Delivered</option>
-            <option value="Cancelled">Cancelled</option>
-          </select>
-        </div>
-        <div class="input-field">
-          <label>Remarks</label>
-          <input name="remarks" type="text" placeholder="Enter remarks" value="{{remarks}}">
-        </div>
-        <p></p>
-        <div class="button">
-        <input type="submit" name="todo" value="Update" class="button update">
-        <input type="submit" name="todo" value="Delete" class="button delete">
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 
 </body>
 

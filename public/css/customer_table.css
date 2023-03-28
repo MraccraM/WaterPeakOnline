@@ -4,6 +4,8 @@
   src: url("/fonts/cooper-black.otf");
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 body {
   background: #5683AB45;
   overflow-x: hidden;
@@ -155,7 +157,6 @@ a:link, a:visited, a:hover, a:active {
   overflow-x: hidden;
   overflow-y: scroll;
   width: 95%;
-  display: flex;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
@@ -184,7 +185,7 @@ tr:nth-child(odd){
 td{
   border: 0;
   border-collapse: collapse;
-  font-family: 'Signika';
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   word-wrap: break-word;
   padding:2px;
@@ -273,6 +274,8 @@ width:80px;
 /* Type filter button enlarging when hovered */
 .btn-filter:hover{
   transform: scale(1.05);
+  background-color: #ddd;
+  cursor: pointer;
 }
 
 .update-button{
@@ -284,6 +287,12 @@ width:80px;
   border:#121b32;
   text-transform: uppercase;
   font-size: 15px;
+}
+
+.update-button:hover{
+  transform: scale(1.05);
+  background-color: #ddd;
+  cursor: pointer;
 }
 
 
@@ -319,10 +328,15 @@ width:110px;
   margin-top: 0px;
   text-align:center;
   padding: 5px 7px;
-  background-color: #5e89cfff;
+  background-color: #4597c0;
   margin-left: 90%;
   margin-top: 13px;
   height:25px;
   width:100px;
+}
+
+.button:hover{
+  background-color: #ddd;
+  cursor: pointer;
 }
 
