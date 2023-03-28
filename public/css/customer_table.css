@@ -137,6 +137,7 @@ a:link, a:visited, a:hover, a:active {
   color: black;
   text-decoration:none;
 }
+
 /* Padding on button text */
 #d, #e {
     padding-left: 50px;
@@ -150,13 +151,15 @@ a:link, a:visited, a:hover, a:active {
 /* Table container w/scroll */
 .table-box{
   border: 0.3px rgba(0, 0, 0, 0.426) solid;
-  height: 450px;
+  height: 320px;
   overflow-x: hidden;
   overflow-y: scroll;
-  width: 1200px;
+  width: 95%;
   display: flex;
   justify-content: center;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1%;
 }
 
 
@@ -167,8 +170,8 @@ a:link, a:visited, a:hover, a:active {
   font-size: 14px;
   table-layout: fixed;
   text-align: center;
-  width: 700px;
-  ;
+  width: 100%;
+  
 }
 
 /* Highlights odd row's background */
@@ -187,16 +190,9 @@ td{
   padding:2px;
 }
 
-/* Sticky table header*/
-.status-bar{
-  font-size: 16px;
-  height: 40px;
-  position: sticky;
-  top: 0;
-}
-
 /* Sticky table header for customer db */
 .c-status-bar{
+  background-color: #4597c0;
   font-size: 20px;
   height: 40px;
   position: sticky;
@@ -205,10 +201,6 @@ td{
   color:white;
 }
 
-/* Makes the address column wider */
-#address{
-  width: 220px;
-}
 
 /* Makes the address column for customer db wider*/
 #c-address{
@@ -219,6 +211,7 @@ td{
 #amount{
   width: 110px;
 }
+
 #c-phonenumber{
   width: 200px;
 }
@@ -312,5 +305,24 @@ width:110px;
 }
 
 .filler{
-  margin-top: 120px;
+  margin-top: 20px;
 }
+
+.button{
+  outline: none;
+  border: none;
+  box-shadow: #888888;
+  font-size: 15px;
+  border-radius: 10px;
+  color:#ffffff;
+  line-height:25px;
+  margin-top: 0px;
+  text-align:center;
+  padding: 5px 7px;
+  background-color: #5e89cfff;
+  margin-left: 90%;
+  margin-top: 13px;
+  height:25px;
+  width:100px;
+}
+

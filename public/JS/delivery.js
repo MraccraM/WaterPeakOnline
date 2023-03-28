@@ -90,14 +90,7 @@ function decide (input){
         
         }
       }
-      document.getElementById("filler2").setAttribute("hidden",true);
-      document.getElementById("filler").removeAttribute("hidden");
-      
-      var revenue = document.getElementById("revenue");
-      revenue.style.display="none";
-      
-      var php = document.getElementById("php");
-      php.style.display="none";
+      hideRev()
 
     }
 
@@ -119,14 +112,7 @@ function decide (input){
   
         }
       }
-      document.getElementById("filler2").setAttribute("hidden",true);
-      document.getElementById("filler").removeAttribute("hidden");
-      
-      var revenue = document.getElementById("revenue");
-      revenue.style.display="none";
-      
-      var php = document.getElementById("php");
-      php.style.display="none";
+      hideRev()
     }
 
     //date filter
@@ -153,24 +139,7 @@ function decide (input){
                 tr[i].style.display = "none";
               }
         
-              document.getElementById("filler").setAttribute("hidden", true);
-              document.getElementById("filler2").removeAttribute("hidden");
-              document.getElementById("revenue").removeAttribute("hidden");
-              document.getElementById("php").removeAttribute("hidden");
-
-              document.getElementById("revenue").innerHTML = "Revenue for " +  date + ":";
-              var revenue = document.getElementById("revenue");
-              revenue.style.fontSize="25px";
-              revenue.style.fontWeight="bold";
-              revenue.style.marginLeft="15%";
-              revenue.style.display="inline";
-              
-              document.getElementById("php").innerHTML ="Php " + rev;
-              var php = document.getElementById("php");
-              php.style.fontSize="25px";
-              php.style.fontWeight="bold";
-              php.style.color="green";
-              php.style.display="inline";
+              showRev(date);
                
             }
           }
@@ -200,10 +169,7 @@ function decide (input){
         }
       }
 
-      document.getElementById("filler2").setAttribute("hidden",true);
-      document.getElementById("php").setAttribute("hidden",true);
-      document.getElementById("revenue").setAttribute("hidden",true);
-      document.getElementById("filler").removeAttribute("hidden");
+      hideRev()
     }
 
     else if (dateBool == 1 && typeBool == 1 && statBool == 0){
@@ -230,24 +196,7 @@ function decide (input){
                 tr[i].style.display = "none";
               }
         
-              document.getElementById("filler").setAttribute("hidden", true);
-              document.getElementById("filler2").removeAttribute("hidden");
-              document.getElementById("revenue").removeAttribute("hidden");
-              document.getElementById("php").removeAttribute("hidden");
-
-              document.getElementById("revenue").innerHTML = "Revenue for " +  date + ":";
-              var revenue = document.getElementById("revenue");
-              revenue.style.fontSize="25px";
-              revenue.style.fontWeight="bold";
-              revenue.style.marginLeft="15%";
-              revenue.style.display="inline";
-              
-              document.getElementById("php").innerHTML ="Php " + rev;
-              var php = document.getElementById("php");
-              php.style.fontSize="25px";
-              php.style.fontWeight="bold";
-              php.style.color="green";
-              php.style.display="inline";
+              showRev(date);
             }
           }
         }
@@ -277,24 +226,7 @@ function decide (input){
                 tr[i].style.display = "none";
               }
         
-              document.getElementById("filler").setAttribute("hidden", true);
-              document.getElementById("filler2").removeAttribute("hidden");
-              document.getElementById("revenue").removeAttribute("hidden");
-              document.getElementById("php").removeAttribute("hidden");
-
-              document.getElementById("revenue").innerHTML = "Revenue for " +  date + ":";
-              var revenue = document.getElementById("revenue");
-              revenue.style.fontSize="25px";
-              revenue.style.fontWeight="bold";
-              revenue.style.marginLeft="15%";
-              revenue.style.display="inline";
-              
-              document.getElementById("php").innerHTML ="Php " + rev;
-              var php = document.getElementById("php");
-              php.style.fontSize="25px";
-              php.style.fontWeight="bold";
-              php.style.color="green";
-              php.style.display="inline";
+              showRev(date);
             }
           }
 }
@@ -326,24 +258,7 @@ else if (dateBool == 1 && typeBool == 1 && statBool == 1){
             tr[i].style.display = "none";
           }
     
-          document.getElementById("filler").setAttribute("hidden", true);
-          document.getElementById("filler2").removeAttribute("hidden");
-          document.getElementById("revenue").removeAttribute("hidden");
-          document.getElementById("php").removeAttribute("hidden");
-
-          document.getElementById("revenue").innerHTML = "Revenue for " +  date + ":";
-          var revenue = document.getElementById("revenue");
-          revenue.style.fontSize="25px";
-          revenue.style.fontWeight="bold";
-          revenue.style.marginLeft="15%";
-          revenue.style.display="inline";
-          
-          document.getElementById("php").innerHTML ="Php " + rev;
-          var php = document.getElementById("php");
-          php.style.fontSize="25px";
-          php.style.fontWeight="bold";
-          php.style.color="green";
-          php.style.display="inline";
+          showRev(date);
           
         }
       }
@@ -379,4 +294,37 @@ function sortDate() {
     }
 
   }
+}
+
+
+function showRev(date){
+  document.getElementById("filler").setAttribute("hidden", true);
+              document.getElementById("filler2").removeAttribute("hidden");
+              document.getElementById("revenue").removeAttribute("hidden");
+              document.getElementById("php").removeAttribute("hidden");
+
+              document.getElementById("revenue").innerHTML = "Revenue for " +  date + ":";
+              var revenue = document.getElementById("revenue");
+              revenue.style.fontSize="20px";
+              revenue.style.fontWeight="bold";
+              revenue.style.marginLeft="2.5%";
+              revenue.style.display="inline";
+              
+              document.getElementById("php").innerHTML ="Php " + rev;
+              var php = document.getElementById("php");
+              php.style.fontSize="20px";
+              php.style.fontWeight="bold";
+              php.style.color="green";
+              php.style.display="inline";
+}
+
+function hideRev(){
+      document.getElementById("filler2").setAttribute("hidden",true);
+      document.getElementById("filler").removeAttribute("hidden");
+      
+      var revenue = document.getElementById("revenue");
+      revenue.style.display="none";
+      
+      var php = document.getElementById("php");
+      php.style.display="none";
 }
