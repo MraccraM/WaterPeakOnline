@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Water Peak Online System</title>
+  <title>Customer Database - WPOS</title>
   <link href="/css/customer_table.css" rel="stylesheet" />
   <link href="/css/tabs.css" rel="stylesheet" />
 </head>
@@ -59,15 +59,17 @@
             <span>Customer Database</span>
           </button>
         </a> 
-    </div>
-
+      </div>
+      <div class="button" onclick="window.location.reload()">
+        Reset Filter
+      </div>  
     <div class="table-box">
       <table class="table" id="t1">
 
         <th class="c-status-bar">
           <div class="filter-box">
             <span class="filter-text" id="name">NAME</span>
-            <button class="btn-filter c-btn-margin" id="btn-name"> V </button>
+            <button class="btn-filter c-btn-margin" id="btn-name" title="Sort by name"> V </button>
           </div>
         </th>
 
@@ -77,7 +79,7 @@
         <th class="c-status-bar">
           <div class="filter-box">
             <span class="filter-text">TYPE</span>
-            <button class="btn-filter c-btn-margin" id="btn-type"> V </button>
+            <button class="btn-filter c-btn-margin" id="btn-type" title="Filter by type"> V </button>
           </div>
         </th>
 
@@ -88,7 +90,7 @@
           <tr>
             <td class="font" id="name">{{Name}}</td>
             <td class="font" id="phoneNum">{{PhoneNumber}}</td>
-            <td class="font"><a href="https://www.google.com/maps?q={{Address}}" target="_blank">{{Address}}</a></td>
+            <td class="font" title="Click to search address in Google Maps"><a href="https://www.google.com/maps?q={{Address}}" target="_blank">{{Address}}</a></td>
             <td class="font">{{Type}}</td>
             <td class="font">{{Remarks}}</td>
             <td>

@@ -128,10 +128,10 @@ body {
 /* Table container w/scroll */
 .table-box{
   border: 2px rgba(0, 0, 0, 0.426) solid;
-  height: 440px;
+  height: 320px;
   overflow-x: hidden;
   overflow-y: scroll;
-  width: 1200px;
+  width: 95%;
   display: flex;
   justify-content: center;
   margin: auto;
@@ -145,7 +145,8 @@ body {
   font-size: 14px;
   table-layout: fixed;
   text-align: center;
-  width: 1190px;
+  margin-bottom: 15%;
+  width:100%;
 }
 
 /* Highlights odd row's background */
@@ -169,30 +170,15 @@ td{
 .status-bar{
   background-color: #4597c0;
   font-size: 16px;
-  height: 45px;
+  height:20px;
   position: sticky;
   top: 0;
   color: white;
 }
 
-/* Makes the address column wider */
-#address{
-  width: 220px;
-}
-
-/* Makes the columns pertaining to amounts smaller*/
-#amount{
-  width: 110px;
-}
-
 #name{
   text-align: left;
 }
-
-#type{
-  margin-left: 5px;
-}
-
 
 /* Filter column's own div */
 .filter-box{
@@ -213,12 +199,7 @@ td{
 }
 /* Header button text margin*/
 #margin{
-  margin-left: 10px;
-}
-
-/* Status column margin*/
-#status{
-  width:110px;
+  margin-left: 15%;
 }
 
 /* Status button margin*/
@@ -239,6 +220,8 @@ td{
 /* Type filter button enlarging when hovered */
 .btn-filter:hover{
   transform: scale(1.05);
+  background-color: #ddd;
+  cursor: pointer;
 }
 
 .update-button{
@@ -252,9 +235,19 @@ td{
   font-size: 15px;
 }
 
-a:link, a:visited, a:hover, a:active { 
+.update-button:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+a:link, a:visited, a:active { 
   color: black;
   text-decoration:none;
+}
+
+a:hover {
+  text-decoration: double;
+  cursor: pointer;
 }
 
 #date{
@@ -262,11 +255,16 @@ a:link, a:visited, a:hover, a:active {
   margin-left: 5px;
 }
 
+#date:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
 #form{
   padding-left: 0px;
   display:flex;
   border:0;
-  margin-left: 30px;
+  margin-left: 30%;
 }
 
 
@@ -275,14 +273,39 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #filler{
-  margin-top: 120px;
+  margin-top: 40px;
 }
 
 #filler2{
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 .font{
   line-height: 20px;
+  width: 10%
+}
+
+.button{
+  outline: none;
+  border: none;
+  box-shadow: #888888;
+  font-size: 15px;
+  border-radius: 10px;
+  color:#ffffff;
+  line-height:25px;
+  margin-top: 0px;
+  text-align:center;
+  padding: 5px 7px;
+  background-color: #4597c0;
+  margin-left: 90%;
+  margin-top: -25px;
+  margin-bottom:20px;
+  height:25px;
+  width:100px;
+}
+
+.button:hover{
+    background-color: #ddd;
+    cursor: pointer;
 }
 
