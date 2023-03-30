@@ -12,7 +12,7 @@
 <body>
 
   <div class="header-container">
-      <div class="header-title">Water Peak Online System</div>
+      <div class="header-title"><a class="blue" href="/main_menu">Water Peak Online System</a></div>
       <p class="contacts">Contacts: 0917-8002885 0977-4916202</p>
   </div>
 
@@ -81,7 +81,7 @@
         </div>
         <div class="input-field">
           <label>Mobile Number</label>
-          <input name="phoneNum" type="tel" placeholder="Enter your number" value="{{phoneNum}}"  pattern="[0-9]{11}" required>
+          <input id="phoneNumD" name="phoneNum" type="tel" placeholder="Enter your number" value="{{phoneNum}}"  pattern="[0-9]{11}" required>
         </div>
         <div class="input-field">
           <label>Date</label>
@@ -103,8 +103,6 @@
           <label>Status</label>
           <select name="status">
             <option value="Pending">Pending</option>
-            <option value="Delivered">Delivered</option>
-            <option value="Cancelled">Cancelled</option>
           </select>
         </div>
         <div class="input-field">
@@ -119,7 +117,7 @@
     </form>
   </div>
 
-
+<script src="/JS/phoneNum.js"></script>
 </body>
 
 </html>

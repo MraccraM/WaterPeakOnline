@@ -256,3 +256,7 @@ a:link, a:visited, a:hover, a:active {
   text-decoration:none;
 }
 
+.blue:link, .blue:visited, .blue:hover, .blue:active { 
+  color: #273687;
+  text-decoration:none;
+}

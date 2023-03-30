@@ -216,6 +216,10 @@ input:disabled{
   color: #eeeeee;
 }
 
+.blue:link, .blue:visited, .blue:hover, .blue:active { 
+  color: #273687;
+  text-decoration:none;
+}
 
 
 
