@@ -153,8 +153,7 @@ const controller = {
                     }
                     else{
                         res.render('add_order', {
-                            name: "User not in Database!",
-                            address: "User not in Database!"
+                            search: "User not in Database! Please try again.",
                         });
                         alert("User not in Database!");
                         console.log("User not in customerDB");
@@ -190,6 +189,9 @@ const controller = {
                     res.redirect('/delivery_table');
                 });
             } else {
+                res.render('add_order', {
+                    search: "User not in Database! Please try again.",
+                });
                 alert("User not in Database!");
                 console.log("User not in customerDB");
             }
