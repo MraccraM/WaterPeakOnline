@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width">
   <title>Update Delivery - WPOS</title>
   <link href="/css/add_order.css" rel="stylesheet" />
+  <link href="/css/tabs.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -26,8 +27,38 @@
       </div>
   </div>
 
-  <br><br><br><br><br><br>
+  
+  <div class="tab" id="tab_menu">
 
+        <a href="/add_order_page">
+          <button class="tab-button">
+            <img src="/images/addOrder.png" alt="addordertab"/>
+            <span>Add Order</span>
+          </button>
+        </a>
+        
+        <a href="/delivery_table">
+          <button class="tab-button">
+            <img src="/images/deliveryTracker.png" alt="deliverytrackerpng"/>
+            <span>Delivery Tracker</span>
+          </button>
+        </a>
+
+        <a href="/add_customer_page">
+          <button class="tab-button">
+            <img src="/images/addCustomer.png" alt="addcustomertab"/>
+            <span>Add Customer</span>
+          </button>
+        </a>
+
+        <a href="/customer_table">
+          <button class="tab-button">
+            <img src="/images/customerDatabase.png" alt="customerdbpng"/>
+            <span>Customer Database</span>
+          </button>
+        </a> 
+  </div>
+  <br><br><br><br><br><br>
   <div class="add-order">
     <div class="title">Update Order</div>
 
