@@ -77,3 +77,74 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 });
+
+// Search NAME
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("search-name").addEventListener("input", filterByName);
+
+  function filterByName () {
+    var input = document.getElementById("search-name").value.toLowerCase();
+    var rows = document.getElementsByTagName("tr");
+
+    for(var i = 1; i < rows.length; i++) {
+      var name = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
+      if(name.indexOf(input) > -1) {
+        rows[i].style.display = "";
+      }
+      else {
+        rows[i].style.display = "none";
+      }
+    }
+
+  }
+
+});
+
+// Search PHONE NUMBER
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("search-number").addEventListener("input", filterByName);
+
+  function filterByName () {
+    var input = document.getElementById("search-number").value.toLowerCase();
+    var rows = document.getElementsByTagName("tr");
+
+    for(var i = 1; i < rows.length; i++) {
+      var name = rows[i].getElementsByTagName("td")[1].textContent.toLowerCase();
+      if(name.indexOf(input) > -1) {
+        rows[i].style.display = "";
+      }
+      else {
+        rows[i].style.display = "none";
+      }
+    }
+
+  }
+
+});
+
+// Search ADDRESS
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("search-address").addEventListener("input", filterByName);
+
+  function filterByName () {
+    var input = document.getElementById("search-address").value.toLowerCase();
+    var rows = document.getElementsByTagName("tr");
+
+    for(var i = 1; i < rows.length; i++) {
+      var name = rows[i].getElementsByTagName("td")[2].textContent.toLowerCase();
+      if(name.indexOf(input) > -1) {
+        rows[i].style.display = "";
+      }
+      else {
+        rows[i].style.display = "none";
+      }
+    }
+
+  }
+
+});
+
+

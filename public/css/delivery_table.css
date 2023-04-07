@@ -293,20 +293,17 @@ a:hover {
   border-radius: 10px;
   color:#ffffff;
   line-height:25px;
-  margin-top: 0px;
   text-align:center;
   padding: 5px 7px;
+  margin-top: 1%;
   background-color: #4597c0;
-  margin-left: 90%;
-  margin-top: -25px;
-  margin-bottom:20px;
   height:25px;
   width:100px;
 }
 
 .button:hover{
-    background-color: #ddd;
-    cursor: pointer;
+  background-color: #ddd;
+  cursor: pointer;
 }
 
 .blue:link, .blue:visited, .blue:hover, .blue:active { 
@@ -314,3 +311,35 @@ a:hover {
   text-decoration:none;
 }
 
+.filter-container {
+  width: 95%;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-form {
+  margin-top: 1%;
+  width:490px;
+  height: 35px;
+  display: flex;
+}
+
+.prefill-form .prefill {
+  width: 380px;
+  height: 8px;
+  font-size: 16px; 
+  padding: 12px 20px 12px 40px; 
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+
+.prefill-form input:valid{
+border: 2px solid lightgreen;
+}
+
+.prefill-form input:invalid{
+border: 2px solid red;
+}
