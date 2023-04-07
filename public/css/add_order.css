@@ -94,7 +94,7 @@ body {
 }
 
 .add{
-  background-color: #5e89cfff;
+  background-color: #4597c0;
 }
 
 .add:hover{
@@ -220,8 +220,10 @@ body {
 
 .search-button{
   margin-bottom: 0px;
+  margin-left: 1%;
   border: none;
   box-shadow: #888888;
+  border-radius: 10px;
   font-size: 13px;
   color:#ffffff;
   line-height:25px;

@@ -57,12 +57,39 @@
         <p class="footer-text">Copyright © 2023 | G2 Solutions</p>
     </div>
   </div> 
-  <p id="filler2"></p>
-  <p id="filler"></p>
-  <p id="revenue" hidden></p><p id="php" hidden></div>
-  <div class="button" onclick="window.location.reload()">
-    Reset Filter
+
+  <p id="revenue" hidden></p><p id="php" hidden>
+
   </div>
+
+
+    <div class="filter-container">
+
+        <form class="search-form" action="/search" method="post">
+        <div class="prefill-form">
+          <input name="search" class="prefill" id="search-name" type="text" placeholder="Search NAME"> 
+        </div>
+      </form>
+
+      <form class="search-form" action="/search" method="post">
+        <div class="prefill-form">
+          <input name="search" class="prefill" id="search-number" type="text" placeholder="Search PHONE NUMBER"> 
+        </div>
+      </form>
+
+      <form class="search-form" action="/search" method="post">
+        <div class="prefill-form">
+          <input name="search" class="prefill" id="search-address" type="text" placeholder="Search ADDRESS"> 
+        </div>
+      </form>
+
+        <div class="button" onclick="window.location.reload()">
+            Reset Filter
+        </div>
+
+    </div>
+
+    <p id="filler2"></p>
     
     <div class="table-box">
       <table class="table" id="t1">
@@ -84,7 +111,7 @@
         </th>
 
         <th class="status-bar" id="address">ADDRESS</th>
-        <th class="status-bar" id="amount">GALLONS ORDERED</th>
+        <th class="status-bar" id="amount">BOTTLES ORDERED</th>
         <th class="status-bar" id="amount">AMOUNT PAID</th>
 
         <th class="status-bar" id="status">
