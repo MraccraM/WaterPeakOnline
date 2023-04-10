@@ -298,7 +298,7 @@ function sortDate() {
 
 
 function showRev(date){
-  document.getElementById("filler").setAttribute("hidden", true);
+              //document.getElementById("filler").setAttribute("hidden", true);
               document.getElementById("filler2").removeAttribute("hidden");
               document.getElementById("revenue").removeAttribute("hidden");
               document.getElementById("php").removeAttribute("hidden");
@@ -310,7 +310,7 @@ function showRev(date){
               revenue.style.marginLeft="2.5%";
               revenue.style.display="inline";
               
-              document.getElementById("php").innerHTML ="Php " + rev;
+              document.getElementById("php").innerHTML =" Php " + rev;
               var php = document.getElementById("php");
               php.style.fontSize="20px";
               php.style.fontWeight="bold";
@@ -320,7 +320,7 @@ function showRev(date){
 
 function hideRev(){
       document.getElementById("filler2").setAttribute("hidden",true);
-      document.getElementById("filler").removeAttribute("hidden");
+      // document.getElementById("filler").removeAttribute("hidden");
       
       var revenue = document.getElementById("revenue");
       revenue.style.display="none";
